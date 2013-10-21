@@ -31,11 +31,6 @@ Once everything is downloaded and puppet is done running, you can log in to the 
 
 Then you can access the server on your host machine's browsers at http://192.168.40.10:9000
 
-### Files to modify (soon to be done in puppet)
-
-In your app folder, edit Gruntfile.js, change host => "*" to host => "0.0.0.0"
-In your app folder, edit karma.conf.js and karma-e2e.conf.js, replace Chrome by Phantomjs
-
 ### Testing
 
 If you want to run unit tests on the project, ssh to the box, cd to ~/yeoman/angular and run the following command
