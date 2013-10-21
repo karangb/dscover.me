@@ -52,10 +52,6 @@ Compressed, packaged assets can be found in ~/yeoman/angular/dist
 If you finished developing for the day, you can halt the vagrant machine to free up resources:
 
         $ vagrant halt
-        
-Or to destroy the entire vm, just type in from the vagrant folder: 
-        
-        $ vagrant destroy
 
 ## Notes
 
