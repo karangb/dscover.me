@@ -29,7 +29,7 @@ Once everything is downloaded and puppet is done running, you can log in to the 
         $ bower install
         $ grunt server OR nohup grunt server > /dev/null 2>&1 &
 
-Then you can access the server on your host machine's browsers at http://192.168.40.10:9000
+Then you can access the server on your host machine's browsers at http://192.168.40.10:3000
 
 ### Testing
 
