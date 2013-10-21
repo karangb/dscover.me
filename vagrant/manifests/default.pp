@@ -43,11 +43,6 @@ class must-have {
     require => Exec["install yeoman"],
   }
 
-  file { "/home/vagrant/yeoman/angular":
-      ensure => "directory",
-      before => Exec['create angular site'],
-      require => Exec['install angular generator'],
-  }
 /*
   exec { 'create angular site':
     command => '/usr/bin/yes | /usr/lib/node_modules/yo/bin/yo booang',
