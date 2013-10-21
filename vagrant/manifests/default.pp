@@ -25,6 +25,7 @@ class must-have {
   }
 */
 
+
   exec { 'install yeoman':
     command => '/usr/bin/npm install -g yo grunt-cli bower phantomjs',
     creates => [
@@ -47,13 +48,14 @@ class must-have {
       before => Exec['create angular site'],
       require => Exec['install angular generator'],
   }
-
+/*
   exec { 'create angular site':
     command => '/usr/bin/yes | /usr/lib/node_modules/yo/bin/yo booang',
     cwd => '/home/vagrant/yeoman/angular',
     creates => '/home/vagrant/yeoman/angular/app',
     require => File["/home/vagrant/yeoman/angular"],
   }
+*/
 /*
   file_line { "update hostname in gruntfile":
     line => "        hostname: '0.0.0.0'",
