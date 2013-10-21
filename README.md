@@ -1,9 +1,8 @@
-vagrant-yeoman-env
+Dscover.me
 ==================
 
+This repository will hold the front end application for the dscover.me web app. 
 A vagrant dev environment for yeoman (http://yeoman.io) that uses a Ubuntu 12.10 Server image and Puppet for provisioning.
-
-This repo is intended as a proof of concept for creating and running a fully-functional Yeoman default scaffolding ("generator-angular") project in Vagrant.
 
 ## Dependencies
 
