@@ -47,6 +47,7 @@ If you want to package your project, ssh to the box, cd to ~/yeoman/angular and 
 
 Compressed, packaged assets can be found in ~/yeoman/angular/dist
 
+## Wrapping Up
 
 If you finished developing for the day, you can halt the vagrant machine to free up resources:
 
