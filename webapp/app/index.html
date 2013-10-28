@@ -14,8 +14,8 @@
         <!-- build:css({.tmp,app}) styles/main.css -->
         <link rel="stylesheet" href="css/main.css">
         
-        <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css">
-        
+        <!-- <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="css/app.css"> 
         <!-- endbuild -->
     </head>
     <body ng-app="dscover.me">
@@ -29,7 +29,7 @@
         <![endif]-->
 
         <header id="header">
-            <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar navbar-default navbar-white navbar-fixed-top">
                   <div class="container">
                     <div class="navbar-header">
                       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -39,6 +39,9 @@
                       </button>
                       <a class="navbar-brand" href="#">dscovr</a>
                     </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Login</a></li>
+                    </ul>
                   </div>
                 </div>
         </header>

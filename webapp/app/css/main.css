@@ -3,7 +3,9 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
 }
-
+.navbar-brand {
+    color:#000;
+}
 .hero-unit {
     margin: 50px auto 0 auto;
     width: 500px;
