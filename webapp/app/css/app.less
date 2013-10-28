@@ -1,0 +1,177 @@
+@import url('../libs/bootstrap/less/bootstrap.less');
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+.unstyled {
+  list-style:none;
+  margin-left:0px !important;
+  padding-left:0px;
+}
+.navbar-brand {
+    color:#000 !important;
+    font-size:30px;
+    font-weight:500;
+    letter-spacing:-1px;
+}
+.hero-unit {
+    margin: 50px auto 0 auto;
+    width: 500px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 60px;
+}
+
+.hero-unit h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+.progress {
+  margin-top:80px;
+  z-index:1001 !important;
+  background:rgba(255,255,255,0.5);
+  border-radius: 0px !important;
+  height:5px;
+
+
+  .progress-bar {
+    position:relative;
+    z-index:1001 !important;
+    .box-shadow(none);
+    #gradient > .horizontal(#367bd9, #00c7b3);
+    .border-right-radius(35px)
+  }
+}
+/* Carousel base class */
+.carousel {
+
+
+  /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+}
+.carousel-inner {
+  position:relative;
+  margin-top: 100px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+  left:auto;
+  text-align:left;
+  right:auto;
+  bottom:120px;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  background-color: #777;
+
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: auto;
+}
+.itunes {
+    right:10%;
+    position:absolute;
+    bottom:160px
+}
+.alterbridge {
+  background:url(../img/alterbridge.jpg) no-repeat top center;
+  background-size:cover;
+  z-index: 1000; 
+  position: fixed !important;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+.media-controls {
+  width:600px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-left:-300px;
+  height:auto;
+}
+.play {
+  .retina-image("../img/play.png", "../img/play@2x.png", 181px, 181px);
+  background-size:cover !important;
+  width:181px;
+  height:181px;
+  text-indent:-999em;
+  position:absolute;
+  left:50%;
+  top:50%;
+  .opacity(0.8);
+  margin-top:-90.5px;
+  margin-left:-90.5px;
+  .transition(all 1s ease-out-in);
+  &:hover {
+    background-position:0px -181px;
+    .opacity(1);
+  }
+}
+.next-prev {
+  position:absolute;
+  text-indent:-999em;
+  .size(119px,119px);
+  top:-59.5px;
+  background-size:cover !important;
+  &:hover {
+    background-position:0px -119px;
+  }
+}
+.prev {
+  .retina-image("../img/prev.png", "../img/prev@2x.png", 119px, 119px);
+  left:50px;
+}
+.next {
+  .retina-image("../img/next.png", "../img/next@2x.png", 119px, 119px);
+  right:50px;
+}
+.artist {
+  color: rgba(255,255,255,0.5);
+  font-size:18px;
+}
+
+/* FOOTER
+-------------------------------------------------- */
+#footer {
+  position:absolute;
+  width:100%;
+  z-index:1001;
+  bottom:0;
+  background:white;
+  padding: 35px 0 25px;
+}
+#footer {
+  li { 
+    display:inline-block;
+    margin-right:15px;
+  }
+  a { color:#000; font-weight:bold; }
+  a:hover { 
+    text-decoration:none; 
+    color: #777;
+  }
+  .copyright {
+    color: #777;
+    font-size:13px;  
+    a { 
+      font-weight:normal;
+      color: #777;
+    }
+    p { margin:0; }
+  }
+}
