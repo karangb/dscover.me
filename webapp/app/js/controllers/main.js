@@ -1,14 +1,9 @@
 'use strict';
 
 angular.module('dscover.me')
-.controller('MainCtrl', ['$scope', function (scope) {
-		scope.awesomeThings = [
-			'HTML5 Boilerplate',
-			'AngularJS',
-			'Bootstrap',
-			'JQuery',
-			'Karma'
-		];
+.controller('MainCtrl', ['$scope', function (scope)  {
+
+    this.toggle = true;
 
 		scope.title = 'dscover.me';
 }]);
