@@ -1,40 +1,16 @@
 
-<style type="text/css">
-/*
- The animate class is apart of the element and the ng-enter class
- is attached to the element once the enter animation event is triggered
-*/
-.reveal-animation.ng-enter {
- -webkit-transition: 1s linear all; /* Safari/Chrome */
- -moz-transition: 1s linear all; /* Firefox */
- -o-transition: 1s linear all; /* Opera */
- transition: 1s linear all; /* IE10+ and Future Browsers */
- 
- /* The animation preparation code */
- opacity: 0;
-}
- 
-/*
- Keep in mind that you want to combine both CSS
- classes together to avoid any CSS-specificity
- conflicts
-*/
-.reveal-animation.ng-enter.ng-enter-active {
- /* The animation code itself */
- opacity: 1;
-}
-</style>
       <div class="progress ">
         <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
           <span class="sr-only">60% Complete</span>
         </div>
       </div>
-      <div class="carousel-inner">
+      <div class="music-player-inner">
         <div class="item alterbridge active">
           <div class="container">
             <p class="media-controls hidden-xs">
               <a href="#" class="next-prev prev">Previous </a>
-              <a href="#" class="play">Play </a>
+              <a href="#" class="play" ng-click="play()" ng-hide="play.playing">Play </a>
+              <a href="#" class="pause" ng-click="pause()">Pause </a>
               <a href="#" class="next-prev next">Next </a>
             </p>
             <div class="carousel-caption align-left">
@@ -44,6 +20,9 @@
               <div class="slide" ng-if="toggle">
                 <p>Some content</p>
               </div> -->
+              <ul>
+                <li ng-repeat="album in albums">{{album.title}}</li>
+                </ul>
             </div>
             <div class="itunes">
               <p class="align-right"><a class="btn btn-large btn-primary" href="#">iTunes</a></p>
@@ -51,3 +30,8 @@
           </div>
         </div>
       </div>
+       <script>
+        
+        </script>
+
+
