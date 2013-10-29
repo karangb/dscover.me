@@ -7,6 +7,7 @@ angular.module('dscover.me')
       $http.get('albums.json').success(function(data) {
         $scope.albums = data;
       });
+
       var playing = false,
           paused = false,
           play = $scope.play,
@@ -18,10 +19,9 @@ angular.module('dscover.me')
               album: 0,
               track: 0
             };
-         if (!music.length) return;
-        audio.src = music[current.album].tracks[current.track].url;
-        audio.play();
-        playing = true
+          audio.src = music[current.album].tracks[current.track].url;
+          audio.play();
+          playing = true
       }
       $scope.pause = function() {
           paused = true;
