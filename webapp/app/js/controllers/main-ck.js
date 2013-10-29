@@ -1,0 +1,1 @@
+"use strict";angular.module("dscover.me").controller("MainCtrl",function(e,t,n){e.title="dscover.me";t.get("tracks.json").success(function(t){e.tracks=t});var r=!1,i=!1,s=e.play,o=e.pause;e.play=function(){var t=e.tracks;n.src=t[0].url;n.play();r=!0};e.pause=function(){i=!0;r=!1;n.pause()}}).factory("audio",function(e){var t=e[0].createElement("audio");return t});
