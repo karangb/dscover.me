@@ -9,10 +9,6 @@ angular.module('dscover.me')
       $scope.tracks = response;
     });
 
-    $scope.range = function(current) {
-        return new Array(current);
-    };
-
     // Set player variables
     $scope.current = 0;
     $scope.playing = false;
