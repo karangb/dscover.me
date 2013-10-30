@@ -1,5 +1,5 @@
 'use strict';
-
+(function(window) {
 angular.module('dscover.me', ['ngRoute', 'ngAnimate'])
   .config(['$routeProvider', function (routeProvider) {
     routeProvider
@@ -11,3 +11,4 @@ angular.module('dscover.me', ['ngRoute', 'ngAnimate'])
         redirectTo: '/'
       });
   }]);
+})(window);

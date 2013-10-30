@@ -7,15 +7,16 @@
       <div class="music-player-inner">
         <div class="item alterbridge active">
           <div class="container">
-            <p class="media-controls hidden-xs">
-              <a href="#" class="next-prev prev">Previous </a>
-              <a href="#" class="play" ng-click="play()">Play </a>
+            <p class="media-controls">
+              <a href="#" class="next-prev prev" ng-click="prev()">Previous </a>
+              <a href="#" class="play" ng-click="play()" ng-hide="player.playing">Play </a>
               <a href="#" class="pause" ng-click="pause()">Pause </a>
-              <a href="#" class="next-prev next">Next </a>
+              <a href="#" class="next-prev next" ng-click="next()">Next </a>
             </p>
             <div class="carousel-caption align-left">
               <h1>Broken Wings</h1>
               <p class="artist">Alter Bridge</p>
+
             </div>
             <div class="itunes">
               <p class="align-right"><a class="btn btn-large btn-primary" href="#">iTunes</a></p>
