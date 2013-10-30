@@ -37,8 +37,10 @@ angular.module('dscover.me')
       $scope.paused = false;
       if ($scope.tracks.length > ($scope.current + 1)) {
       $scope.current++;
-      $scope.play();
+      } else {
+        $scope.current = 0;
       }
+       if($scope.playing) $scope.play();
     }
     // Previous Button
     $scope.prev = function() {
@@ -71,7 +73,7 @@ angular.module('dscover.me')
   }
 
     audio.addEventListener('ended', function() {
-      $scope.next();
+      $scope.$apply($scope.next);
     })
     audio.addEventListener("timeupdate", function(){    
       var duration = document.getElementById('duration');
