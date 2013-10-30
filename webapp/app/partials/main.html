@@ -11,9 +11,9 @@
                        <button ng-click="muteVolume()" class="volume volume-up" ng-hide="muted">Mute</button>
               <button ng-click="muteVolume()" class="volume mute" ng-show="muted">Unmute</button>
             <p class="media-controls">
-              <button class="control next-prev prev" ng-click="prev()">Previous </button>
-              <button class="control play" ng-click="play()" ng-hide="playing">Play </button>
-              <button class="control pause" ng-click="pause()" ng-show="playing">Pause </button>
+              <button class="control next-prev prev fade-in" ng-click="prev()">Previous </button>
+              <button class="control play hide-effect" ng-click="play()" ng-hide="playing">Play </button>
+              <button class="control pause hide-effect" ng-click="pause()" ng-show="playing">Pause </button>
               <button class="control next-prev next" ng-click="next()">Next </button>
             </p>
             <div ng-animate="'animate'" class="carousel-caption align-left" ng-repeat="track in tracks| limitTo:1">
