@@ -2,17 +2,11 @@
 
 
 angular.module('dscover.me')
-.controller('MainCtrl', function ($scope, $http, audio, $rootScope)  {
+.controller('MainCtrl', function ($scope, $http, audio, $compile)  {
 
 		$scope.title = 'dscover.me';
     $http.get('tracks.json', { cache: true}).success(function(response) {
       $scope.tracks = response;
-    });
-
-    angular.forEach($scope.tracks, function(track){
-      $scope.title = track.title;
-      $scope.url = track.url;
-      $scope.artist = track.artist;
     });
 
     $scope.range = function(current) {
@@ -23,6 +17,7 @@ angular.module('dscover.me')
     $scope.current = 0;
     $scope.playing = false;
     $scope.paused = false;
+    $scope.muted = false;
 
     // Play Button
     $scope.play = function() {
@@ -58,6 +53,39 @@ angular.module('dscover.me')
       }
     }
 
+    $scope.volumeUp = function() {
+      audio.volume += 0.1;
+    }
+    $scope.volumeDown = function() {
+      if(audio.volume <= 1) {
+        return false;
+      } else {
+      audio.volume -+ 1;
+     }
+  }
+
+  $scope.muteVolume = function() {
+    if($scope.muted == true) {
+      audio.volume = 1;
+      $scope.muted = false;
+    } else {
+      audio.volume = 0;
+      $scope.muted = true;
+    }
+  }
+
+    audio.addEventListener('ended', function() {
+      $scope.next();
+    })
+    audio.addEventListener("timeupdate", function(){    
+      var duration = document.getElementById('duration');
+      var s = parseInt(audio.currentTime % 60);
+      var total = audio.duration;
+      var totalAmount = s / total * 100;
+      alert(totalAmount);
+
+      $(".progress").html($compile("<div class='progress-bar' style='width:" + totalAmount + "%'><span class='sr-only'>60% Complete</span></div>")($scope));
+    }, false);
 
 })
 

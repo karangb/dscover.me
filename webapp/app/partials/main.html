@@ -1,12 +1,15 @@
 
       <div class="progress ">
-        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-          <span class="sr-only">60% Complete</span>
+        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="0" style="width: 0%;">
+          <span class="sr-only">0% Complete</span>
         </div>
       </div>
+
       <div class="music-player-inner">
         <div class="item alterbridge active">
           <div class="container">
+                       <button ng-click="muteVolume()" class="volume volume-up" ng-hide="muted">Mute</button>
+              <button ng-click="muteVolume()" class="volume mute" ng-show="muted">Unmute</button>
             <p class="media-controls">
               <button class="control next-prev prev" ng-click="prev()">Previous </button>
               <button class="control play" ng-click="play()" ng-hide="playing">Play </button>
@@ -16,7 +19,7 @@
             <div class="carousel-caption align-left" ng-repeat="track in tracks| limitTo:1">
               <h1>{{tracks[current].title}}</h1>
               <p class="artist">{{tracks[current].artist}}</p>
-
+ 
             </div>
             <div class="itunes">
               <p class="align-right"><a class="btn btn-large btn-primary" href="#">iTunes</a></p>
