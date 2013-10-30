@@ -6041,6 +6041,8 @@ body {
   height: 18px;
   background-position: top left;
   text-indent: -999em;
+  -webkit-transition: 0.5s ease opacity;
+  transition: 0.5s ease opacity;
 }
 .volume.volume-up {
   background-image: url("../img/volume.png");
@@ -6201,16 +6203,16 @@ body {
   opacity: 1;
 }
 .hide-effect.ng-hide-add {
-  -webkit-transition: 0.3s linear opacity;
-  transition: 0.3s linear opacity;
+  -webkit-transition: 0.15s linear opacity;
+  transition: 0.15s linear opacity;
   opacity: 1;
 }
 .hide-effect.ng-hide-add.ng-hide-add-active {
   opacity: 0;
 }
 .hide-effect.ng-hide-remove {
-  -webkit-transition: 0.3s linear opacity;
-  transition: 0.3s linear opacity;
+  -webkit-transition: 0.15s linear opacity;
+  transition: 0.15s linear opacity;
   display: block!important;
   opacity: 0;
 }

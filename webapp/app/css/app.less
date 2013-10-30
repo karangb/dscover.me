@@ -120,6 +120,7 @@ body {
   .size(20px, 18px);
   background-position:top left;
   text-indent:-999em;
+  .transition(0.5s ease opacity);
   &.volume-up { 
    .retina-image("../img/volume.png", "../img/volume@2x.png", 20px, 18px);   
   }
@@ -241,7 +242,7 @@ body {
 // Hiding & Showing
 // ----------------
 .hide-effect.ng-hide-add {
-  .transition(0.3s linear opacity);
+  .transition(0.15s linear opacity);
 
   opacity:1;
 }
@@ -251,7 +252,7 @@ body {
 
 
 .hide-effect.ng-hide-remove {
-  .transition(0.3s linear opacity);
+  .transition(0.15s linear opacity);
 
   display:block!important;
   opacity:0;

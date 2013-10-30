@@ -78,7 +78,6 @@ angular.module('dscover.me')
       var s = parseInt(audio.currentTime % 60);
       var total = audio.duration;
       var totalAmount = s / total * 100;
-      alert(totalAmount);
 
       $(".progress").html($compile("<div class='progress-bar' style='width:" + totalAmount + "%'><span class='sr-only'>60% Complete</span></div>")($scope));
     }, false);
