@@ -1,7 +1,4 @@
 [{
-    "title": "Bound - Zen Bound Ingame Music",
-    "artist": "Ghost Monkey",
-    "tracks": [{
         "title": "Care",
         "url": "music/blue.mp3"
     },
@@ -44,14 +41,6 @@
     {
         "title": "Tunnel At The End Of Light",
         "url": "music/minimalish.mp3"
-    }]
-},
-{
-    "title": "Where the Earth Meets the Sky",
-    "artist": "Tom Heasley",
-    "tracks": [{
-        "title": "Ground Zero",
-        "url": "music/blue.mp3"
     },
     {
         "title": "Western Sky",
@@ -64,5 +53,4 @@
     {
         "title": "Where the Earth Meets the Sky",
         "url": "music/slower.mp3"
-    }]
 }]
