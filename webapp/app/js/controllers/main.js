@@ -5,32 +5,55 @@ angular.module('dscover.me')
 .controller('MainCtrl', function ($scope, $http, audio, $rootScope)  {
 
 		$scope.title = 'dscover.me';
-    $http.get('tracks.json').success(function(response) {
+    $http.get('tracks.json', { cache: true}).success(function(response) {
       $scope.tracks = response;
     });
-    $scope.current = {
-      track:0
-    }
-    $scope.play = function() {
-        audio.src = $scope.tracks[$scope.current.track].url;
-        audio.play();
-        $scope.playing = true;  
 
+    angular.forEach($scope.tracks, function(track){
+      $scope.title = track.title;
+      $scope.url = track.url;
+      $scope.artist = track.artist;
+    });
+
+    $scope.range = function(current) {
+        return new Array(current);
+    };
+
+    // Set player variables
+    $scope.current = 0;
+    $scope.playing = false;
+    $scope.paused = false;
+
+    // Play Button
+    $scope.play = function() {
+        if (!$scope.tracks.length) return;
+        if(!$scope.paused) audio.src = $scope.tracks[$scope.current].url;
+        audio.play();
+        $scope.playing = true;
     }
+
+    // Pause Button
     $scope.pause = function() {
-      audio.pause();
+      if($scope.playing) {
+        audio.pause();
+        $scope.playing = false
+        $scope.paused = true
+      }
     }
+
+    // Next Button
     $scope.next = function() {
-      if ($scope.tracks.length > ($scope.current.track + 1)) {
-      $scope.current.track++;
+      $scope.paused = false;
+      if ($scope.tracks.length > ($scope.current + 1)) {
+      $scope.current++;
       $scope.play();
       }
-
     }
+    // Previous Button
     $scope.prev = function() {
-      $scope.current.track = 1;
-      if ($scope.current.track > 0) {
-      $scope.current.track--;
+      $scope.paused = false;
+      if ($scope.current > 0) {
+      $scope.current--;
       $scope.play();
       }
     }

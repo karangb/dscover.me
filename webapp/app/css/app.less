@@ -108,7 +108,14 @@ body {
   margin-top:-29.5px;
   height:auto;
 }
-.play {
+.control {
+  border:none;
+  background-color: transparent;
+  &:focus{
+    outline:none !important;
+  }
+}
+.play, .pause {
   .retina-image("../img/play.png", "../img/play@2x.png", 181px, 181px);
   background-size:cover !important;
   width:181px;
@@ -125,6 +132,9 @@ body {
     background-position:0px -181px;
     .opacity(1);
   }
+}
+.pause {
+   .retina-image("../img/pause.png", "../img/pause@2x.png", 181px, 181px); 
 }
 .next-prev {
   position:absolute;
