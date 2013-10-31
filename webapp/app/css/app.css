@@ -6250,3 +6250,47 @@ body {
 .hide-effect.ng-hide-remove.ng-hide-remove-active {
   opacity: 1;
 }
+.half-hide-effect.ng-hide-add {
+  -webkit-transition: 0.3s linear opacity;
+  transition: 0.3s linear opacity;
+  opacity: 1;
+}
+.half-hide-effect.ng-hide {
+  display: block !important;
+  opacity: 0.3;
+}
+.half-hide-effect.ng-hide-add.ng-hide-add-active {
+  opacity: 0.3;
+}
+.half-hide-effect.ng-hide-remove {
+  -webkit-transition: 0.15s linear opacity;
+  transition: 0.15s linear opacity;
+  display: block!important;
+  opacity: 0.3;
+}
+.half-hide-effect,
+.half-hide-effect.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+}
+.width-effect.ng-hide-add {
+  -webkit-transition: move 2s linear infinite;
+  transition: move 2s linear infinite;
+  width: 100%;
+}
+.width-effect.ng-hide {
+  display: block !important;
+  width: 0%;
+}
+.width-effect.ng-hide-add.ng-hide-add-active {
+  width: 0%;
+}
+.width-effect.ng-hide-remove {
+  -webkit-transition: move 2s linear infinite;
+  transition: move 2s linear infinite;
+  display: block!important;
+  width: 0%;
+}
+.width-effect,
+.width-effect.ng-hide-remove.ng-hide-remove-active {
+  width: 100%;
+}
