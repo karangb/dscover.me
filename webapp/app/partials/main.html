@@ -6,20 +6,26 @@
       </div>
 
       <div class="music-player-inner">
+
         <div class="item alterbridge active">
           <div class="container">
-                       <button ng-click="muteVolume()" class="volume volume-up" ng-hide="muted">Mute</button>
-              <button ng-click="muteVolume()" class="volume mute" ng-show="muted">Unmute</button>
+              <div class="volume-controls">
+                <button ng-click="muteVolume()" ng-mouseenter="showVolumeSlider = true"  class="volume volume-up" ng-hide="muted">Mute</button>
+                <button ng-click="muteVolume()" class="volume mute" ng-show="muted">Unmute</button>
+                <div class="volume-slider vertical-container hide-effect" ng-mouseleave="showVolumeSlider = false" ng-show="showVolumeSlider">
+                  <div ui-slider="volumes.options" use-decimals  ng-model="volumes.default"></div>
+                </div>
+              </div>
             <p class="media-controls">
               <button class="control next-prev prev fade-in" ng-click="prev()">Previous </button>
               <button class="control play hide-effect" ng-click="play()" ng-hide="playing">Play </button>
               <button class="control pause hide-effect" ng-click="pause()" ng-show="playing">Pause </button>
               <button class="control next-prev next" ng-click="next()">Next </button>
             </p>
-            <div class="carousel-caption align-left" ng-repeat="track in tracks| limitTo:1">
+            <div class="carousel-caption align-left fade-in" ng-repeat="track in tracks| limitTo:1">
+
               <h1>{{tracks[current].title}}</h1>
               <p class="artist">Artist</p>
- 
             </div>
             <div class="itunes">
               <p class="align-right"><a class="btn btn-large btn-primary" href="#">iTunes</a></p>

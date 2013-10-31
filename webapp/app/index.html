@@ -13,13 +13,12 @@
 
         <!-- build:css({.tmp,app}) styles/main.css -->
         <link rel="stylesheet" href="css/main.css">
-        
+         <link rel="stylesheet" href="libs/jquery-ui/themes/base/minified/jquery-ui.min.css">       
         <!-- <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css"> -->
         <link rel="stylesheet" href="css/app.css"> 
         <!-- endbuild -->
-<style>
 
-</style>
+
     </head>
     <body ng-app="dscover.me">
         <!--[if lt IE 7]>
@@ -31,7 +30,7 @@
           <script src="libs/json3/lib/json3.min.js"></script>
         <![endif]-->
         
-        <header id="header">
+        <header id="header" style="display:none">
             <div class="navbar navbar-default navbar-white navbar-fixed-top">
                   <div class="container">
 
@@ -52,7 +51,11 @@
                 </div>
         </header>
         <!-- Add your site or application content here -->
-        <div ng-view=""  class="fade-in"></div>
+
+        <div ng-view="" class="fade-in">
+            
+
+        </div>
         <footer id="footer">
         <div class="container">
             <div class="footer-links row-fluid">
@@ -74,12 +77,14 @@
             </div>
         </div>
         </footer>
-        <script src="libs/angular/angular.js"></script>
+
 
         <!-- build:js scripts/plugins.js -->
         
         <script src="libs/jquery/jquery.js"></script>
         <script src="libs/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+        <script src="libs/angular/angular.js"></script>
+
         <script src="libs/bootstrap/dist/js/bootstrap.js"></script>
         
         <!-- endbuild -->
@@ -92,6 +97,7 @@
         <script src="libs/angular-loader/angular-loader.js"></script>
         <script src="libs/angular-cookies/angular-cookies.js"></script>
         <script src="libs/angular-sanitize/angular-sanitize.js"></script>
+        <script src="libs/angular-ui-slider/src/slider.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->

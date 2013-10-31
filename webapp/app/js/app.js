@@ -1,6 +1,6 @@
 'use strict';
 (function(window) {
-angular.module('dscover.me', ['ngRoute', 'ngAnimate'])
+angular.module('dscover.me', ['ngRoute', 'ngAnimate', 'ui.slider'])
   .config(['$routeProvider', function (routeProvider) {
     routeProvider
       .when('/', {
