@@ -77,11 +77,6 @@ angular.module('dscover.me')
       audio.volume -+ 1;
      }
   }
-  function checkVolume() {
-      if($scope.volumes.default == 0) {
-        $scope.muted == true;
-      }
-  }
 
   $scope.muteVolume = function() {
     if($scope.muted == true) {
@@ -94,8 +89,9 @@ angular.module('dscover.me')
     }
   }
     function setVolume () {
-      if($scope.muted == true) {
-      }
+      if($scope.volumes.default == 0) {
+        $scope.$apply($scope.muted = true);
+      } 
       audio.volume = $scope.volumes.default;
     }
 
