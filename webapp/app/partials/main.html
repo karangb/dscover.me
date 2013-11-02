@@ -23,6 +23,9 @@
               <a href="#" class="control next-prev next" ng-click="next()">Next </a>
             </p>
             <div class="carousel-caption align-left fade-in" ng-repeat="track in tracks| limitTo:1">
+              <div class="spinner">
+                
+              </div>
               <h1>{{tracks[current].title}}</h1>
               <p class="artist">Artist</p>
             </div>
