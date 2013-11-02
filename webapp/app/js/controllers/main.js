@@ -2,13 +2,13 @@
 
 
 angular.module('dscover.me')
-.controller('MainCtrl', function ($scope, $http, audio, $compile)  {
+.controller('MainCtrl', function ($scope, $http, audio, $compile, fetchTracks)  {
 
 		$scope.title = 'dscover.me';
-    $http.get('tracks.json', { cache: true}).success(function(response)
-    {
-      $scope.tracks = response;
-    });
+
+     // Retun tracks with a promise
+    fetchTracks.success(function(response)
+    { $scope.tracks = response; });
 
     // Set player variables
     $scope.current = 0;
@@ -17,18 +17,18 @@ angular.module('dscover.me')
     $scope.muted = false;
 
     // Set volume variables
-      $scope.volumes = {
-        default: 0.5,
-        options: {
-          orientation: 'vertical',
-          min: 0.00,
-          max: 1.00,
-          step: 0.1,
-          range: 'min',
-          change: setVolume,
-          slide: setVolume
-        }
-      };
+    $scope.volumes = {
+      default: 0.5,
+      options: {
+        orientation: 'vertical',
+        min: 0.00,
+        max: 1.00,
+        step: 0.1,
+        range: 'min',
+        change: setVolume,
+        slide: setVolume
+      }
+    };
 
 
     // Play Button
@@ -58,6 +58,7 @@ angular.module('dscover.me')
       }
        if($scope.playing) $scope.play();
     }
+
     // Previous Button
     $scope.prev = function() {
       $scope.paused = false;
@@ -67,27 +68,19 @@ angular.module('dscover.me')
       }
     }
 
-    $scope.volumeUp = function() {
-      audio.volume += 0.1;
-    }
-    $scope.volumeDown = function() {
-      if(audio.volume <= 1) {
-        return false;
+    // Mute Button
+    $scope.muteVolume = function() {
+      if($scope.muted == true) {
+        $scope.muted = false;
+        $scope.volumes.default = 0.5;
       } else {
-      audio.volume -+ 1;
-     }
-  }
-
-  $scope.muteVolume = function() {
-    if($scope.muted == true) {
-      $scope.muted = false;
-      $scope.volumes.default = 0.5;
-    } else {
-      audio.volume = 0;
-      $scope.volumes.default = 0.00;
-      $scope.muted = true;
+        audio.volume = 0;
+        $scope.volumes.default = 0.00;
+        $scope.muted = true;
+      }
     }
-  }
+
+     // Listen for Volume
     function setVolume () {
       if($scope.volumes.default == 0) {
         $scope.$apply($scope.muted = true);
@@ -95,10 +88,12 @@ angular.module('dscover.me')
       audio.volume = $scope.volumes.default;
     }
 
-
+     // Trigger to play next song when song has ended
     audio.addEventListener('ended', function() {
       $scope.$apply($scope.next);
     })
+
+     // Keep us updated on time
     audio.addEventListener("timeupdate", function(){    
       var duration = document.getElementById('duration');
       var s = parseInt(audio.currentTime % 60);
@@ -109,8 +104,13 @@ angular.module('dscover.me')
     }, false);
 
 })
-  // extract the audio for making the player easier to test
+
+// Create audio element
 .factory('audio', function($document) {
     var audio = $document[0].createElement('audio');
     return audio;
+})
+// Fetch some tracks
+.factory('fetchTracks', function($rootScope, $http) {
+  return $http.get('tracks.json')
 });
