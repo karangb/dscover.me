@@ -2,13 +2,16 @@
 
 
 angular.module('dscover.me')
-.controller('MainCtrl', function ($scope, $http, audio, $compile, fetchTracks)  {
+.controller('MainCtrl', function ($scope, $http, audio, $compile, fetchTracks, fetchHypemId)  {
 
 		$scope.title = 'dscover.me';
-
+    
      // Retun tracks with a promise
     fetchTracks.success(function(response)
-    { $scope.tracks = response; });
+    { $scope.tracks = response.tracks; });
+
+    fetchHypemId.success(function(response)
+    { $scope.mp3url = eval(response); });
 
     // Set player variables
     $scope.current = 0;
@@ -25,18 +28,20 @@ angular.module('dscover.me')
         max: 1.00,
         step: 0.1,
         range: 'min',
-        change: setVolume,
+        change: setVolume,  
         slide: setVolume
       }
     };
 
-
     // Play Button
     $scope.play = function() {
         if (!$scope.tracks.length) return;
-        if(!$scope.paused) audio.src = $scope.tracks[$scope.current].url;
+        var trial = $scope.mp3url;
+        if(!$scope.paused) audio.src = trial;
+        console.log(audio.src);
         audio.play();
         $scope.playing = true;
+        console.log($scope.mp3url);
     }
 
     // Pause Button
@@ -110,7 +115,11 @@ angular.module('dscover.me')
     var audio = $document[0].createElement('audio');
     return audio;
 })
+
 // Fetch some tracks
-.factory('fetchTracks', function($rootScope, $http) {
-  return $http.get('tracks.json')
+.factory('fetchTracks', function($http) {
+ return $http.get("http://gijwi.com:8080/recommendations?username=karan");
+})
+.factory('fetchHypemId', function($http) {
+ return $http.get("http://gijwi.com:3001/mp3?hypemId=1pv1b");
 });
