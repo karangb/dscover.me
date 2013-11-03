@@ -10,10 +10,8 @@ angular.module('dscover.me')
     fetchTracks.success(function(response)
     { $scope.tracks = response.tracks; });
 
-    mp3Resource.success(function(response)
+    mp3Resource().success(function(response)
     { $scope.mp3url = eval(response); });
-
-
 
     // Set player variables
     $scope.current = 0;
@@ -37,7 +35,6 @@ angular.module('dscover.me')
 
     // Play Button
     $scope.play = function() {
-
         if (!$scope.tracks.length) return;
         var trial = $scope.mp3url;
         if(!$scope.paused) audio.src = trial;
@@ -126,8 +123,7 @@ angular.module('dscover.me')
 })
 
 .factory('mp3Resource', function($http, $rootScope) {
- //var hypemId = $rootScope.checkHypemId();
- return $http.get('http://gijwi.com:3001/mp3?hypemId=1wj4a' );
+ return function(){return $http.get('http://gijwi.com:3001/mp3?hypemId=1wj4a')};
 });
 
 
