@@ -2,7 +2,7 @@
 
 
 angular.module('dscover.me')
-.controller('MainCtrl', function ($scope, $http, audio, $compile, fetchTracks, fetchHypemId)  {
+.controller('MainCtrl', function ($scope, $http, audio, $compile, fetchTracks, mp3Resource)  {
 
 		$scope.title = 'dscover.me';
     
@@ -10,7 +10,7 @@ angular.module('dscover.me')
     fetchTracks.success(function(response)
     { $scope.tracks = response.tracks; });
 
-    fetchHypemId.success(function(response)
+    mp3Resource.success(function(response)
     { $scope.mp3url = eval(response); });
 
 
@@ -125,12 +125,12 @@ angular.module('dscover.me')
  return $http.get("http://gijwi.com:8080/recommendations?username=karan");
 })
 
-.factory('fetchHypemId', function($http, $rootScope) {
+.factory('mp3Resource', function($http, $rootScope) {
  //var hypemId = $rootScope.checkHypemId();
  return $http.get('http://gijwi.com:3001/mp3?hypemId=1wj4a' );
 });
 
-/* .factory('fetchHypemId', function($resource, $rootScope) {
+/* .factory('mp3Resource', function($resource, $rootScope) {
  var hypemId = $rootScope.hypemId;
     return $resource('http://gijwi.com:3001/mp3', {}, {
         query: {method:'GET', params:{ hypemId: hypemId }, isArray:true }
