@@ -29,7 +29,6 @@ angular.module('dscover.me')
         slide: setVolume
       }
     };
-
     // Play Button
     $scope.play = function() {
 
@@ -41,12 +40,11 @@ angular.module('dscover.me')
       // Pull in json data
       mp3Resource(hypemId).success(function(response) { 
       var mp3url = eval(response);
-
+      $scope.loader = true;
       audio.src = mp3url;
       audio.play();
-
+      $scope.loader = false;
        });
-
       // If track is paused...
       if($scope.pause) {
         audio.play();
