@@ -97,8 +97,9 @@ angular.module('dscover.me')
     function setVolume () {
       if($scope.volumes.default == 0) {
         $scope.$apply($scope.muted = true);
-      } 
+      } else {
       audio.volume = $scope.volumes.default;
+      }
     }
     $scope.checkHypemId = function() {
       return $scope.tracks[$scope.current].hypemId;
