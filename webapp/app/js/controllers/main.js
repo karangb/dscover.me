@@ -32,9 +32,8 @@ angular.module('dscover.me')
 
     // Play Button
     $scope.play = function() {
-
-        mp3Resource($scope.tracks[$scope.current].hypemId).success(function(response)
-        { 
+        var hypemId = $scope.tracks[$scope.current].hypemId;
+        mp3Resource(hypemId).success(function(response) { 
         var mp3url = eval(response);
         if (!$scope.tracks.length) return;
         if(!$scope.paused) audio.src = mp3url;
