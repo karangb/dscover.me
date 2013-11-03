@@ -15,6 +15,7 @@ To create your local Yeoman environment:
 
         $ git clone https://github.com/karangb/dscover.me
         $ cd dscover.me/vagrant
+        $ librarian-puppet install - (https://github.com/rodjek/librarian-puppet)
         $ vagrant up
 
 This entire process will take about 10-15 minutes on a high-speed connection (20MBS+). The base box is about 430MB and there's around 300MB of dependencies that need to be downloaded once the VM boots.
