@@ -13,6 +13,8 @@ angular.module('dscover.me')
     fetchHypemId.success(function(response)
     { $scope.mp3url = eval(response); });
 
+
+
     // Set player variables
     $scope.current = 0;
     $scope.playing = false;
@@ -35,6 +37,7 @@ angular.module('dscover.me')
 
     // Play Button
     $scope.play = function() {
+
         if (!$scope.tracks.length) return;
         var trial = $scope.mp3url;
         if(!$scope.paused) audio.src = trial;
@@ -92,8 +95,10 @@ angular.module('dscover.me')
       } 
       audio.volume = $scope.volumes.default;
     }
+    $scope.checkHypemId = function() {
+      return $scope.tracks[$scope.current].hypemId;
+    }
 
-     // Trigger to play next song when song has ended
     audio.addEventListener('ended', function() {
       $scope.$apply($scope.next);
     })
@@ -107,7 +112,6 @@ angular.module('dscover.me')
 
       $(".progress").html($compile("<div class='progress-bar' style='width:" + totalAmount + "%'><span class='sr-only'>60% Complete</span></div>")($scope));
     }, false);
-
 })
 
 // Create audio element
@@ -120,6 +124,15 @@ angular.module('dscover.me')
 .factory('fetchTracks', function($http) {
  return $http.get("http://gijwi.com:8080/recommendations?username=karan");
 })
-.factory('fetchHypemId', function($http) {
- return $http.get("http://gijwi.com:3001/mp3?hypemId=1pv1b");
+
+.factory('fetchHypemId', function($http, $rootScope) {
+ //var hypemId = $rootScope.checkHypemId();
+ return $http.get('http://gijwi.com:3001/mp3?hypemId=1wj4a' );
 });
+
+/* .factory('fetchHypemId', function($resource, $rootScope) {
+ var hypemId = $rootScope.hypemId;
+    return $resource('http://gijwi.com:3001/mp3', {}, {
+        query: {method:'GET', params:{ hypemId: hypemId }, isArray:true }
+    })
+}); */
