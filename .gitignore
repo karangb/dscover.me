@@ -3,3 +3,5 @@
 *.log
 
 webapp/nohup.out
+
+webapp/dist/
