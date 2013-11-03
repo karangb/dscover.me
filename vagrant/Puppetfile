@@ -8,5 +8,5 @@ mod 'puppetlabs/stdlib'
 mod 'apt',
   :git => 'https://github.com/puppetlabs/puppetlabs-apt.git'
 
-mod 'puppet-nginx',
-  :git => 'https://github.com/jfryman/puppet-nginx.git'
+mod 'puppetlabs-nginx',
+  :git => 'https://github.com/puppetlabs/puppetlabs-nginx.git'
