@@ -130,9 +130,4 @@ angular.module('dscover.me')
  return $http.get('http://gijwi.com:3001/mp3?hypemId=1wj4a' );
 });
 
-/* .factory('mp3Resource', function($resource, $rootScope) {
- var hypemId = $rootScope.hypemId;
-    return $resource('http://gijwi.com:3001/mp3', {}, {
-        query: {method:'GET', params:{ hypemId: hypemId }, isArray:true }
-    })
-}); */
+
