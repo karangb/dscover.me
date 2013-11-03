@@ -32,16 +32,26 @@ angular.module('dscover.me')
 
     // Play Button
     $scope.play = function() {
-        var hypemId = $scope.tracks[$scope.current].hypemId;
-        mp3Resource(hypemId).success(function(response) { 
-        var mp3url = eval(response);
-        if (!$scope.tracks.length) return;
-        if(!$scope.paused) audio.src = mp3url;
+
+      if (!$scope.tracks.length) return;
+
+      // Fetch hypemId
+      var hypemId = $scope.tracks[$scope.current].hypemId;
+
+      // Pull in json data
+      mp3Resource(hypemId).success(function(response) { 
+      var mp3url = eval(response);
+
+      audio.src = mp3url;
+      audio.play();
+
+       });
+
+      // If track is paused...
+      if($scope.pause) {
         audio.play();
         $scope.playing = true;
-
-         });
-     
+      }     
     }
 
     // Pause Button
