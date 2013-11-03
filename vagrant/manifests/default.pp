@@ -15,17 +15,6 @@ class must-have {
     require => Apt::Ppa["ppa:chris-lea/node.js"],
   }
 
-/*
-  exec { 'install gem compass':
-    command => 'gem install compass',
-  }
-
-  exec { 'install gem sass':
-    command => 'gem install sass',
-  }
-*/
-
-
   exec { 'install yeoman':
     command => '/usr/bin/npm install -g yo grunt-cli bower phantomjs',
     creates => [
@@ -43,54 +32,7 @@ class must-have {
     require => Exec["install yeoman"],
   }
 
-/*
-  exec { 'create angular site':
-    command => '/usr/bin/yes | /usr/lib/node_modules/yo/bin/yo booang',
-    cwd => '/home/vagrant/yeoman/angular',
-    creates => '/home/vagrant/yeoman/angular/app',
-    require => File["/home/vagrant/yeoman/angular"],
-  }
-*/
-/*
-  file_line { "update hostname in gruntfile":
-    line => "        hostname: '0.0.0.0'",
-    path => "/home/vagrant/yeoman/angular/Gruntfile.js",
-    match => "hostname: '*'",
-    ensure => present,
-    require => Exec["create angular site"],
-  }
 
-  file_line { "update port in gruntfile":
-    line => "        port: 9000,",
-    path => "/home/vagrant/yeoman/angular/Gruntfile.js",
-    match => "port: 3000,",
-    ensure => present,
-    require => Exec["create angular site"],
-  }
-
-  file_line { "update browser in karma":
-    line => "browsers = ['PhantomJS'];",
-    path => "/home/vagrant/yeoman/angular/karma.conf.js",
-    match => "browsers = ['Chrome'];",
-    ensure => present,
-    require => Exec["create angular site"],
-  }
-
-  file_line { "update browser in karma e2e":
-    line => "browsers = ['PhantomJS'];",
-    path => "/home/vagrant/yeoman/angular/karma-e2e.conf.js",
-    match => "browsers = ['Chrome'];",
-    ensure => present,
-    require => Exec["create angular site"],
-  }
-
-  exec { 'bower update':
-    command => 'bower update',
-    cwd => '/home/vagrant/yeoman/angular',
-    creates => '/home/vagrant/yeoman/angular/app/libs',
-    require => File["/home/vagrant/yeoman/angular"],
-  }
-*/
   package { ["vim",
              "bash",
              "nodejs",
