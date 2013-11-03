@@ -1,7 +1,18 @@
 FORGE
   remote: http://forge.puppetlabs.com
   specs:
+    puppetlabs/apt (1.4.0)
+      puppetlabs/stdlib (>= 2.2.1)
     puppetlabs/stdlib (4.1.0)
+
+GIT
+  remote: https://github.com/jfryman/puppet-nginx.git
+  ref: master
+  sha: 6f87f1cca7ae16fa4c5e3a98e1b45605d503b426
+  specs:
+    puppet-nginx (0.0.5)
+      puppetlabs/apt (>= 1.0.0)
+      puppetlabs/stdlib (>= 0.1.6)
 
 GIT
   remote: https://github.com/puppetlabs/puppetlabs-apt.git
@@ -13,5 +24,6 @@ GIT
 
 DEPENDENCIES
   apt (>= 0)
+  puppet-nginx (>= 0)
   puppetlabs/stdlib (>= 0)
 
