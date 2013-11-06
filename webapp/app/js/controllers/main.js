@@ -73,6 +73,7 @@ angular.module('dscover.me')
       $scope.paused = false;
       if ($scope.tracks.length > ($scope.current + 1)) {
       $scope.current++;
+      audio.pause();
       } else {
         $scope.current = 0;
       }
