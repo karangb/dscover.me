@@ -73,7 +73,7 @@ angular.module('dscover.me')
       $scope.paused = false;
       if ($scope.tracks.length > ($scope.current + 1)) {
       $scope.current++;
-      //audio.pause();
+      audio.pause();
       } else {
         $scope.current = 0;
       }
@@ -85,6 +85,7 @@ angular.module('dscover.me')
       $scope.paused = false;
       if ($scope.current > 0) {
       $scope.current--;
+      audio.pause();
       if($scope.playing) $scope.play();
       }
     }
