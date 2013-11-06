@@ -6119,7 +6119,8 @@ body {
   outline: none !important;
 }
 .play,
-.pause {
+.pause,
+.loader {
   background-image: url("../img/play.png");
   background-size: cover !important;
   width: 181px;
@@ -6135,16 +6136,27 @@ body {
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .play,
-  .pause {
+  .pause,
+  .loader {
     background-image: url("../img/play@2x.png");
     background-size: 181px 181px;
   }
 }
 .play:hover,
-.pause:hover {
+.pause:hover,
+.loader:hover {
   background-position: 0px -181px;
   opacity: 1;
   filter: alpha(opacity=100);
+}
+.loader {
+  background-image: url("../img/loader.png");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .loader {
+    background-image: url("../img/loader@2x.png");
+    background-size: 181px 181px;
+  }
 }
 .pause {
   background-image: url("../img/pause.png");

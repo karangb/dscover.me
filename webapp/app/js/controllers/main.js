@@ -32,24 +32,31 @@ angular.module('dscover.me')
     // Play Button
     $scope.play = function() {
 
-      if (!$scope.tracks.length) return;
 
+      $scope.loader = true;
       // Fetch hypemId
       var hypemId = $scope.tracks[$scope.current].hypemId;
 
-      // Pull in json data
+      // If player is paused, then play is clicked, resume current song.
+      if($scope.paused === true) {
+        $scope.loader = false;
+        audio.play();
+        console.log("im resuming")
+        $scope.playing = true;
+      } else {
+
+      // Else play the song from the beggining
       mp3Resource(hypemId).success(function(response) { 
       var mp3url = eval(response);
-      $scope.loader = true;
       audio.src = mp3url;
-      audio.play();
-      $scope.loader = false;
-       });
-      // If track is paused...
-      if($scope.pause) {
         audio.play();
+        console.log("im playing")
         $scope.playing = true;
-      }     
+        $scope.loader = false;
+       });
+    }
+
+     
     }
 
     // Pause Button
@@ -77,13 +84,13 @@ angular.module('dscover.me')
       $scope.paused = false;
       if ($scope.current > 0) {
       $scope.current--;
-      $scope.play();
+      if($scope.playing) $scope.play();
       }
     }
 
     // Mute Button
     $scope.muteVolume = function() {
-      if($scope.muted == true) {
+      if($scope.muted === true) {
         $scope.muted = false;
         $scope.volumes.default = 0.5;
       } else {
@@ -95,14 +102,11 @@ angular.module('dscover.me')
 
      // Listen for Volume
     function setVolume () {
-      if($scope.volumes.default == 0) {
-        $scope.$apply($scope.muted = true);
+      if($scope.volumes.default === 0) {
+        $scope.muted = true
       } else {
       audio.volume = $scope.volumes.default;
       }
-    }
-    $scope.checkHypemId = function() {
-      return $scope.tracks[$scope.current].hypemId;
     }
 
     audio.addEventListener('ended', function() {
@@ -131,7 +135,7 @@ angular.module('dscover.me')
  return $http.get("http://gijwi.com:8080/recommendations?username=karan");
 })
 
-.factory('mp3Resource', function($http, $rootScope) {
+.factory('mp3Resource', function($http) {
  return function(hypemId){return $http.get('http://gijwi.com:3001/mp3?hypemId=' + hypemId)};
 });
 

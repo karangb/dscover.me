@@ -16,7 +16,7 @@
                   <div ui-slider="volumes.options" use-decimals  ng-model="volumes.default"></div>
                 </div>
               </div>
-              <div id="loader">Loading...</div>
+              <div class="loader" ng-show="loader">Loading...</div>
             <p class="media-controls half-hide-effect" ng-show="showControls">
               <a href="#" class="control next-prev prev fade-in" ng-click="prev()">Previous </a>
               <a href="#" class="control play hide-effect" ng-click="play()" ng-hide="playing">Play </a>

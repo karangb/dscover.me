@@ -25,7 +25,7 @@ module.exports = function (grunt) {
     yeomanConfig.app = require('./bower.json').appPath || yeomanConfig.app;
   } catch (e) {}
 
-  grunt.loadNpmTasks('grunt-express');
+  grunt.loadNpmTasks('grunt-express', 'grunt-ngmin');
 
   grunt.initConfig({
     yeoman: yeomanConfig,
@@ -256,13 +256,15 @@ module.exports = function (grunt) {
       }
     },
     ngmin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.dist %>/js',
-          src: '*.js',
-          dest: '<%= yeoman.dist %>/scripts'
-        }]
+      controllers: {
+        src: ['test/src/controllers/one.js'],
+        dest: 'test/generated/controllers/one.js'
+      },
+      directives: {
+        expand: true,
+        cwd: 'test/src',
+        src: ['directives/**/*.js'],
+        dest: 'test/generated'
       }
     },
     uglify: {
