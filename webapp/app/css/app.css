@@ -6129,6 +6129,7 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
+  z-index: 1001;
   opacity: 0.8;
   filter: alpha(opacity=80);
   margin-top: -90.5px;
@@ -6155,6 +6156,7 @@ body {
   -webkit-animation-duration: 1.5s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
+  z-index: 1000 !important;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .loader {

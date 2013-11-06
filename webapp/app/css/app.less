@@ -178,6 +178,7 @@ body {
   position:absolute;
   left:50%;
   top:50%;
+  z-index:1001;
   .opacity(0.8);
   margin-top:-90.5px;
   margin-left:-90.5px;
@@ -188,7 +189,8 @@ body {
 }
 .loader {
     .retina-image("../img/loader.png", "../img/loader@2x.png", 181px, 181px);
-    .animation; 
+    .animation;
+    z-index:1000 !important;
 }
 .pause {
    .retina-image("../img/pause.png", "../img/pause@2x.png", 181px, 181px); 
