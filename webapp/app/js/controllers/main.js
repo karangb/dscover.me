@@ -13,7 +13,7 @@ angular.module('dscover.me')
     $scope.current = 0;
     $scope.playing = false;
     $scope.paused = false;
-    $scope.muted = false;
+    
 
 
 
