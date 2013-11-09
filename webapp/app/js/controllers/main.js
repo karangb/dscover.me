@@ -2,16 +2,18 @@
 
 
 angular.module('dscover.me')
-.controller('MainCtrl', function ($scope, $http, audio, $compile, fetchMp3, getTracks)  {
+.controller('MainCtrl', function ($scope, $http, audio, $compile, fetchMp3, fetchRecommendations)  {
 
 		$scope.title = 'dscover.me';
-    
+
+     fetchRecommendations('karan').success(function(response)
+      { $scope.tracks = response.tracks; });
+
     // Set player variables
     $scope.current = 0;
     $scope.playing = false;
     $scope.paused = false;
     $scope.muted = false;
-    $scope.tracks = getTracks;
 
 
 
