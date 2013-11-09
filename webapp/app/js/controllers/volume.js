@@ -3,7 +3,6 @@ angular.module('dscover.me')
 .controller('VolumeCtrl', function volumeController ($scope, $http, audio) {
    
    $scope.muted = false;
-    // Set volume variables
     $scope.volumes = {
       default: 0.5,
       options: {
