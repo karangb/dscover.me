@@ -18,19 +18,7 @@ angular.module('dscover.me')
     $scope.tracks = getTracks;
 
 
-    // Set volume variables
-    $scope.volumes = {
-      default: 0.5,
-      options: {
-        orientation: 'vertical',
-        min: 0.00,
-        max: 1.00,
-        step: 0.1,
-        range: 'min',
-        change: setVolume,  
-        slide: setVolume
-      }
-    };
+
     // Play Button
     $scope.play = function() {
       $scope.loader = true;
@@ -90,26 +78,7 @@ angular.module('dscover.me')
       }
     }
 
-    // Mute Button
-    $scope.muteVolume = function() {
-      if($scope.muted === true) {
-        $scope.muted = false;
-        $scope.volumes.default = 0.5;
-      } else {
-        audio.volume = 0;
-        $scope.volumes.default = 0.00;
-        $scope.muted = true;
-      }
-    }
 
-     // Listen for Volume
-    function setVolume () {
-      if($scope.volumes.default === 0) {
-        $scope.muted = true
-      } else {
-      audio.volume = $scope.volumes.default;
-      }
-    }
 
     audio.addEventListener('ended', function() {
       $scope.$apply($scope.next);
