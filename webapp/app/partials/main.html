@@ -10,7 +10,7 @@
         <div class="item alterbridge active" ng-mouseenter="showControls = true" ng-mouseleave="showControls = false">
           <div class="container">
 
-              <div class="volume-controls">
+              <div class="volume-controls"  ng-controller="VolumeCtrl">
                 <a href="#" ng-click="muteVolume()" ng-mouseenter="showVolumeSlider = true" ng-mouseleave="showVolumeSlider = true" class="volume volume-up" ng-hide="muted">Mute</a>
                 <a href="#" ng-click="muteVolume()" class="volume mute" ng-show="muted">Unmute</a>
                 <div class="volume-slider vertical-container hide-effect" ng-mouseleave="showVolumeSlider = false" ng-show="showVolumeSlider">
