@@ -2,19 +2,30 @@
 
 
 angular.module('dscover.me')
-.controller('MainCtrl', function ($scope, $http, audio, $compile, fetchTracks, mp3Resource)  {
+.controller('MainCtrl', function ($scope, $http, audio, $compile, mp3Resource, fetchUsername)  {
 
 		$scope.title = 'dscover.me';
     
-     // Retun tracks with a promise
+     /* Retun tracks with a promise
     fetchTracks.success(function(response)
     { $scope.tracks = response.tracks; });
-
+    */
     // Set player variables
     $scope.current = 0;
     $scope.playing = false;
     $scope.paused = false;
     $scope.muted = false;
+
+    // Get username entered
+
+    $scope.username = function() {
+      var username = $scope.userInput;
+      console.log(username);
+      /*  fetchUsername(username).success( function(response) {
+          $scope.tracks = response.tracks;
+                console.log($scope.tracks);
+        }) */
+    }
 
     // Set volume variables
     $scope.volumes = {
@@ -132,13 +143,15 @@ angular.module('dscover.me')
     return audio;
 })
 
-// Fetch some tracks
-.factory('fetchTracks', function($http) {
- return $http.get("http://gijwi.com:8080/recommendations?username=karan");
-})
+/* Fetch some tracks
+.factory('fetchTracks', function($http, fetchUsername) {
+ return $http.get(fetchUsername);
+}) */
 
 .factory('mp3Resource', function($http) {
  return function(hypemId){return $http.get('http://gijwi.com:3001/mp3?hypemId=' + hypemId)};
-});
+})
+
+
 
 

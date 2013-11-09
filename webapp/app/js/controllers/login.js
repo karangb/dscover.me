@@ -19,11 +19,13 @@ angular.module('dscover.me')
         });
     };
 })
-.controller('modalController', function modalController ($scope, $modalInstance, items) {
+.controller('modalController', function modalController ($scope, $http, $modalInstance, items, fetchUsername) {
+
     $scope.items = items;
     $scope.selected = {
         item: $scope.items[0]
     };
+
     $scope.ok = function () {
         $modalInstance.close($scope.selected.item);
         console.log('ok');
@@ -31,5 +33,9 @@ angular.module('dscover.me')
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
         console.log('cancel');
+    };
+    $scope.username = function() {
+        var userInput = $scope.userInput;
+        console.log(userInput);
     };
 });
