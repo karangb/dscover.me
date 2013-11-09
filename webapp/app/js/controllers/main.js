@@ -152,6 +152,8 @@ angular.module('dscover.me')
  return function(hypemId){return $http.get('http://gijwi.com:3001/mp3?hypemId=' + hypemId)};
 })
 
-
+.factory('fetchUsername', function($http) {
+  return function(hypemUser) { return $http.get('http://giwi.com/recommendations?username=' + hypemUser)};
+})
 
 
