@@ -15,13 +15,11 @@ angular.module('dscover.me')
 
 
 
-    // Play Button
     $scope.play = function() {
+
       $scope.loader = true;
-      // Fetch hypemId
       var hypemId = $scope.tracks[$scope.current].hypemId;
 
-      // If player is paused, then play is clicked, resume current song.
       if($scope.paused === true) {
         $scope.loader = false;
         audio.play();
@@ -29,7 +27,7 @@ angular.module('dscover.me')
         $scope.playing = true;
       } else {
 
-      // Else play the song from the beggining
+
       fetchMp3(hypemId).success(function(response) { 
       var mp3url = eval(response);
       audio.src = mp3url;
@@ -43,7 +41,7 @@ angular.module('dscover.me')
      
     }
 
-    // Pause Button
+
     $scope.pause = function() {
       if($scope.playing) {
         audio.pause();
@@ -52,7 +50,7 @@ angular.module('dscover.me')
       }
     }
 
-    // Next Button
+
     $scope.next = function() {
       $scope.paused = false;
       if ($scope.tracks.length > ($scope.current + 1)) {
@@ -65,7 +63,7 @@ angular.module('dscover.me')
        if($scope.playing) $scope.play();
     }
 
-    // Previous Button
+
     $scope.prev = function() {
       $scope.paused = false;
       if ($scope.current > 0) {
