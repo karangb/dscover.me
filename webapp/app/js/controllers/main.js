@@ -6,10 +6,6 @@ angular.module('dscover.me')
 
 		$scope.title = 'dscover.me';
     
-     /* Retun tracks with a promise
-    fetchTracks.success(function(response)
-    { $scope.tracks = response.tracks; });
-    */
     // Set player variables
     $scope.current = 0;
     $scope.playing = false;
@@ -100,11 +96,6 @@ angular.module('dscover.me')
     var audio = $document[0].createElement('audio');
     return audio;
 })
-
-/* Fetch some tracks
-.factory('fetchTracks', function($http, fetchUsername) {
- return $http.get(fetchUsername);
-}) */
 
 .factory('fetchMp3', function($http) {
  return function(hypemId){return $http.get('http://gijwi.com:3001/mp3?hypemId=' + hypemId)};
