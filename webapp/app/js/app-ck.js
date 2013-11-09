@@ -1,1 +1,0 @@
-"use strict";angular.module("dscover.me",["ngRoute","ngResource","ngAnimate","ui.slider","ui.bootstrap"]).config(["$routeProvider",function(e){e.when("/",{templateUrl:"partials/main.html",controller:"MainCtrl"}).otherwise({redirectTo:"/"})}]);
