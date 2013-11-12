@@ -97,10 +97,6 @@ angular.module('dscover.me')
     var audio = $document[0].createElement('audio');
     return audio;
 })
-
-/* .factory('fetchMp3', function($http) {
- return function(hypemId){return $http.get('http://gijwi.com:3001/mp3?hypemId=' + hypemId)};
-}) */
 .factory('fetchTracks', function($http) {
   return {
     recommendations: function(hypemUser) { return $http.get('http://gijwi.com:8080/recommendations?username=' + hypemUser)},
