@@ -9,11 +9,10 @@ angular.module('dscover.me')
      fetchTracks.recommendations('karan').success(function(response)
       { $scope.tracks = response.tracks; });
 
-    // Set player variables
     $scope.current = 0;
     $scope.playing = false;
     $scope.paused = false;
-    $scope.muted = false;
+
 
     $scope.play = function() {
 
@@ -31,6 +30,11 @@ angular.module('dscover.me')
       fetchTracks.mp3(hypemId).success(function(response) { 
       var mp3url = eval(response);
       audio.src = mp3url;
+      } 
+      else {
+        fetchMp3(hypemId).success(function(response) { 
+        var mp3url = eval(response);
+        audio.src = mp3url;
         audio.play();
         console.log("im playing")
         $scope.playing = true;
@@ -39,6 +43,9 @@ angular.module('dscover.me')
       } 
     }
 
+      });
+    }
+  }
 
     $scope.pause = function() {
       if($scope.playing) {
@@ -47,7 +54,6 @@ angular.module('dscover.me')
         $scope.paused = true
       }
     }
-
 
     $scope.next = function() {
       $scope.paused = false;
@@ -61,7 +67,6 @@ angular.module('dscover.me')
        if($scope.playing) $scope.play();
     }
 
-
     $scope.prev = function() {
       $scope.paused = false;
       if ($scope.current > 0) {
@@ -70,7 +75,6 @@ angular.module('dscover.me')
       if($scope.playing) $scope.play();
       }
     }
-
 
 
     audio.addEventListener('ended', function() {
