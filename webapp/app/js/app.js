@@ -5,7 +5,7 @@ angular.module('dscover.me', ['ngRoute','ngResource', 'ngAnimate', 'ui.slider', 
     $routeProvider
       .when('/', {
         templateUrl: 'partials/main.html',
-        controller: 'MainCtrl'
+        controller: 'PlayerCtrl'
       })
       .otherwise({
         redirectTo: '/'
