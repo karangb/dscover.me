@@ -3,44 +3,34 @@ angular.module('dscover.me')
 .controller('PlayerCtrl', function ($scope, $http, audio, $compile, fetchTracks) {
 
      fetchTracks.recommendations('karan').success(function(response)
-      { $scope.tracks = response.tracks; alert($scope.tracks)});
-
-    $scope.current = 0;
-    $scope.playing = false;
-    $scope.paused = false;
+      { $scope.tracks = response.tracks;});
 
 
-    $scope.play = function() {
+     $scope.current = 0;
+     $scope.playing = false;
+     $scope.paused = false;
 
-      $scope.loader = true;
-      var hypemId = $scope.tracks[$scope.current].hypemId;
+     $scope.player = {
 
-      if($scope.paused === true) {
-        $scope.loader = false;
-        audio.play();
-        console.log("im resuming")
-        $scope.playing = true;
-      } else {
-        fetchTracks.mp3(hypemId).success(function(response) { 
-        var mp3url = eval(response);
-        audio.src = mp3url;
-        audio.play();
-        console.log("im playing")
-        $scope.playing = true;
-        $scope.loader = false;
-        });
-    }
-  }
-
-    $scope.pause = function() {
-      if($scope.playing) {
-        audio.pause();
-        $scope.playing = false
-        $scope.paused = true
-      }
-    }
-
-    $scope.next = function() {
+        play: function() {
+          $scope.loader = true;
+          var hypemId = $scope.tracks[$scope.current].hypemId;
+          if($scope.paused === true) {
+            $scope.loader = false;
+            audio.play();
+            console.log("im resuming")
+            $scope.playing = true;
+          } else {
+            fetchTracks.mp3(hypemId).success(function(response) { 
+            var mp3url = eval(response);
+            audio.src = mp3url;
+            audio.play();
+            $scope.playing = true;
+            $scope.loader = false;
+            });
+          }          
+        },
+    next: function() {
       $scope.paused = false;
       if ($scope.tracks.length > ($scope.current + 1)) {
         $scope.current++;
@@ -49,18 +39,18 @@ angular.module('dscover.me')
       else {
         $scope.current = 0;
       }
-       if($scope.playing) $scope.play();
-    }
+       if($scope.playing) $scope.player.play();     
+    },  
 
-    $scope.prev = function() {
-      $scope.paused = false;
-      if ($scope.current > 0) {
-      $scope.current--;
-      audio.pause();
-      if($scope.playing) $scope.play();
+    pause: function() {
+      if($scope.playing) {
+        audio.pause();
+        $scope.playing = false
+        $scope.paused = true
       }
     }
 
+  }
 
    audio.addEventListener('ended', function() {
       $scope.$apply($scope.next);
@@ -75,4 +65,5 @@ angular.module('dscover.me')
 
       $(".progress").html($compile("<div class='progress-bar' style='width:" + totalAmount + "%'><span class='sr-only'>60% Complete</span></div>")($scope));
     }, false); 
+
 })
