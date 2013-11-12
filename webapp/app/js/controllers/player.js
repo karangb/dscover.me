@@ -2,9 +2,14 @@
 angular.module('dscover.me')
 .controller('PlayerCtrl', function ($scope, $http, audio, $compile, fetchTracks) {
 
-     fetchTracks.recommendations('karan').success(function(response)
-      { $scope.tracks = response.tracks;});
-
+     $scope.fetchUsername = function(hypemUser) {
+        fetchTracks.recommendations(hypemUser).success(function(response)
+        { $scope.tracks = response.tracks;});
+      }
+ /*
+        fetchTracks.recommendations('karan').success(function(response)
+        { $scope.tracks = response.tracks;});
+*/
 
      $scope.current = 0;
      $scope.playing = false;
