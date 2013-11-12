@@ -2,11 +2,11 @@
 
 
 angular.module('dscover.me')
-.controller('MainCtrl', function ($scope, $http, audio, $compile, fetchMp3, fetchRecommendations)  {
+.controller('MainCtrl', function ($scope, $http, audio, $compile, fetchTracks)  {
 
 		$scope.title = 'dscover.me';
 
-     fetchRecommendations('karan').success(function(response)
+     fetchTracks.recommendations('karan').success(function(response)
       { $scope.tracks = response.tracks; });
 
     // Set player variables
@@ -14,8 +14,6 @@ angular.module('dscover.me')
     $scope.playing = false;
     $scope.paused = false;
     $scope.muted = false;
-
-
 
     $scope.play = function() {
 
@@ -30,7 +28,7 @@ angular.module('dscover.me')
       } else {
 
 
-      fetchMp3(hypemId).success(function(response) { 
+      fetchTracks.mp3(hypemId).success(function(response) { 
       var mp3url = eval(response);
       audio.src = mp3url;
         audio.play();
@@ -38,9 +36,7 @@ angular.module('dscover.me')
         $scope.playing = true;
         $scope.loader = false;
        });
-    }
-
-     
+      } 
     }
 
 
@@ -98,11 +94,14 @@ angular.module('dscover.me')
     return audio;
 })
 
-.factory('fetchMp3', function($http) {
+/* .factory('fetchMp3', function($http) {
  return function(hypemId){return $http.get('http://gijwi.com:3001/mp3?hypemId=' + hypemId)};
-})
-.factory('fetchRecommendations', function($http) {
-  return function(hypemUser) { return $http.get('http://gijwi.com:8080/recommendations?username=' + hypemUser)};
+}) */
+.factory('fetchTracks', function($http) {
+  return {
+    recommendations: function(hypemUser) { return $http.get('http://gijwi.com:8080/recommendations?username=' + hypemUser)},
+    mp3: function(hypemId) {return $http.get('http://gijwi.com:3001/mp3?hypemId=' + hypemId)}
+  }
 })
 
 
