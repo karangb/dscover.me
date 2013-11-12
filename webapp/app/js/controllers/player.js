@@ -30,7 +30,6 @@ angular.module('dscover.me')
           if($scope.paused === true) {
             $scope.loader = false;
             audio.play();
-            console.log("im resuming")
             $scope.playing = true;
           } else {
             fetchTracks.mp3(hypemId).success(function(response) { 
@@ -42,27 +41,34 @@ angular.module('dscover.me')
             });
           }          
         },
-    next: function() {
-      $scope.paused = false;
-      if ($scope.tracks.length > ($scope.current + 1)) {
-        $scope.current++;
+      pause: function() {
+        if($scope.playing) {
+          audio.pause();
+          $scope.playing = false
+          $scope.paused = true
+        }
+      },
+      next: function() {
+        $scope.paused = false;
+        if ($scope.tracks.length > ($scope.current + 1)) {
+          $scope.current++;
+          audio.pause();
+        } 
+        else {
+          $scope.current = 0;
+        }
+         if($scope.playing) $scope.player.play();     
+      },  
+      prev: function() {
+        $scope.paused = false;
+        if ($scope.current > 0) {
+        $scope.current--;
         audio.pause();
-      } 
-      else {
-        $scope.current = 0;
+        if($scope.playing) $scope.player.play();
+        }
       }
-       if($scope.playing) $scope.player.play();     
-    },  
 
-    pause: function() {
-      if($scope.playing) {
-        audio.pause();
-        $scope.playing = false
-        $scope.paused = true
-      }
     }
-
-  }
 
    audio.addEventListener('ended', function() {
       $scope.$apply($scope.next);
