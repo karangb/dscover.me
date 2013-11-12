@@ -25,25 +25,14 @@ angular.module('dscover.me')
         console.log("im resuming")
         $scope.playing = true;
       } else {
-
-
-      fetchTracks.mp3(hypemId).success(function(response) { 
-      var mp3url = eval(response);
-      audio.src = mp3url;
-      } 
-      else {
-        fetchMp3(hypemId).success(function(response) { 
+        fetchTracks.mp3(hypemId).success(function(response) { 
         var mp3url = eval(response);
         audio.src = mp3url;
         audio.play();
         console.log("im playing")
         $scope.playing = true;
         $scope.loader = false;
-       });
-      } 
-    }
-
-      });
+        });
     }
   }
 
