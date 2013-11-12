@@ -2,14 +2,18 @@
 angular.module('dscover.me')
 .controller('PlayerCtrl', function ($scope, $http, audio, $compile, fetchTracks) {
 
-     $scope.fetchUsername = function(hypemUser) {
-        fetchTracks.recommendations(hypemUser || 'karan').success(function(response)
-        { $scope.tracks = response.tracks; $scope.player.play();});
+      if($scope.login) {
+         fetchTracks.recommendations('karan').success(function(response)
+        { $scope.tracks = response.tracks;;});         
       }
- /*
-        fetchTracks.recommendations('karan').success(function(response)
-        { $scope.tracks = response.tracks;});
-*/
+
+     $scope.login = function(hypemUser) {
+        fetchTracks.recommendations(hypemUser || 'karan').success(function(response)
+        { $scope.tracks = response.tracks; 
+          if($scope.playing === true) 
+            audio.pause();
+            $scope.player.play();});
+      }
 
      $scope.current = 0;
      $scope.playing = false;
