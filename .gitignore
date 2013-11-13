@@ -5,5 +5,6 @@
 webapp/nohup.out
 
 webapp/dist/
-
 *-ck.js
+
+node_modules/
