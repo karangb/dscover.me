@@ -16,10 +16,10 @@ angular.module('dscover.me')
       loader: loader,
 
         play: function() {
-          loader = true;
+          player.loader = true;
           var hypemId = $scope.tracks[current].hypemId;
           if(paused === true) {
-            loader = false;
+            player.loader = false;
             audio.play();
             player.playing = true;
 
@@ -29,7 +29,7 @@ angular.module('dscover.me')
             audio.src = mp3url;
             audio.play();
             player.playing = true;
-            loader = false;
+            player.loader = false;
             });
           }          
         },
