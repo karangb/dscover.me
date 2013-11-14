@@ -21,10 +21,6 @@ angular.module('dscover.me')
 })
 .controller('modalController', function ($scope, $rootScope, $http, $modalInstance, items, fetchTracks) {
 
-    $scope.items = items;
-    $scope.selected = {
-        item: $scope.items[0]
-    };
 
     $scope.ok = function () {
         $modalInstance.close($scope.selected.item);
