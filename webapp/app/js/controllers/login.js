@@ -1,6 +1,6 @@
 'use strict';
 angular.module('dscover.me')
-.controller('LoginCtrl', function mainController ($scope, $modal, $http) {
+.controller('LoginCtrl', function ($scope, $modal, $http ) {
     $scope.items = ['item1', 'item2', 'item3'];
     $scope.open = function (modalName) {
         var modalInstance = $modal.open({
@@ -19,7 +19,7 @@ angular.module('dscover.me')
         });
     };
 })
-.controller('modalController', function modalController ($scope, $http, $modalInstance, items, fetchUsername, getTracks) {
+.controller('modalController', function ($scope, $rootScope, $http, $modalInstance, items, fetchTracks) {
 
     $scope.items = items;
     $scope.selected = {
@@ -34,18 +34,10 @@ angular.module('dscover.me')
         $modalInstance.dismiss('cancel');
         console.log('cancel');
     };
-    $scope.login = function(username) {
-        fetchRecommendations(username).success( function(response) {
-            $scope.tracks = response.tracks;
-            getTracks($scope.tracks);
+    $scope.login = function(hypemUser) {
+        fetchTracks.recommendations(hypemUser).success( function(response) {
+            $rootScope.tracks = response.tracks;
             $modalInstance.dismiss('cancel');
-
         })
-        console.log(getUsername);
     };
 })
-.factory('getTracks', function() {
-    return function(tracks) {
-        return tracks;
-    }
-});
