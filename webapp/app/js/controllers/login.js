@@ -19,7 +19,7 @@ angular.module('dscover.me')
         });
     };
 })
-.controller('modalController', function ($scope, $rootScope, $http, $modalInstance, items, fetchTracks) {
+.controller('modalController', function ($scope, $rootScope, $http, $modalInstance, items, fetchTracks, player) {
 
 
     $scope.ok = function () {
@@ -33,6 +33,7 @@ angular.module('dscover.me')
     $scope.login = function(hypemUser) {
         fetchTracks.recommendations(hypemUser).success( function(response) {
             $rootScope.tracks = response.tracks;
+            player.play();
             $modalInstance.dismiss('cancel');
         })
     };
