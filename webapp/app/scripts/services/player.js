@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('dscover.me')
-  .factory('player', function ($rootScope, $http, audio, fetchTracks) {
+  .factory('player', function ($rootScope, $http, audio, fetchTracks, $compile) {
 
     var player,
         loader,
@@ -61,5 +61,20 @@ angular.module('dscover.me')
         }
       }
     };
+
+   audio.addEventListener('ended', function() {
+      $rootScope.$apply(player.next);
+    })
+
+     // Keep us updated on time
+    audio.addEventListener("timeupdate", function(){    
+      var duration = document.getElementById('duration');
+      var s = parseInt(audio.currentTime % 60);
+      var total = audio.duration;
+      var totalAmount = s / total * 100;
+
+      $(".progress").html($compile("<div class='progress-bar' style='width:" + totalAmount + "%'><span class='sr-only'>60% Complete</span></div>")($rootScope));
+    }, false); 
+
     return player
   });
