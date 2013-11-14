@@ -2,7 +2,7 @@
 angular.module('dscover.me')
 .controller('PlayerCtrl', function ($scope, $http, audio, $compile, fetchTracks) {
 
-      if($scope.login) {
+ /*     if($scope.login) {
          fetchTracks.recommendations('leguzman').success(function(response)
         { $scope.tracks = response.tracks;});         
       }
@@ -16,7 +16,7 @@ angular.module('dscover.me')
               alert("Error no username exists, please try again");
             })
 
-      }
+      } */
 
      $scope.current = 0;
      $scope.playing = false;
