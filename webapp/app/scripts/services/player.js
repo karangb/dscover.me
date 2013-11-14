@@ -63,7 +63,7 @@ angular.module('dscover.me')
     };
 
    audio.addEventListener('ended', function() {
-      $rootScope.$apply(player.next);
+      $rootScope.$apply(player.next());
     })
 
      // Keep us updated on time
