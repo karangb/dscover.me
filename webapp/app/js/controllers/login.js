@@ -1,6 +1,8 @@
 'use strict';
 angular.module('dscover.me')
 .controller('LoginCtrl', function ($scope, $modal, $http ) {
+
+
     $scope.items = ['item1', 'item2', 'item3'];
     $scope.open = function (modalName) {
         var modalInstance = $modal.open({
@@ -19,7 +21,7 @@ angular.module('dscover.me')
         });
     };
 })
-.controller('modalController', function ($scope, $rootScope, $http, $modalInstance, items, fetchTracks, player) {
+.controller('modalController', function ($scope, $rootScope, $http, $modalInstance, items, fetchTracks, player, audio) {
 
 
     $scope.ok = function () {
@@ -30,9 +32,11 @@ angular.module('dscover.me')
         $modalInstance.dismiss('cancel');
         console.log('cancel');
     };
+
     $scope.login = function(hypemUser) {
         fetchTracks.recommendations(hypemUser).success( function(response) {
             $rootScope.tracks = response.tracks;
+            audio.pause();
             player.play();
             $modalInstance.dismiss('cancel');
         })
