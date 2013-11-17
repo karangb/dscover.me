@@ -23,20 +23,20 @@
           <div class="container" >
             <h1><a href="/">uncovr</a></h1>
             <div class="hero-content midway-vertical midway fadeIn">
-              <h5>The new way to...</h5>
+              
               <h2>Discover.<br /> Play. Share.</h2>
-              <a class="btn btn-lg learn-more" href="#features">learn more</a>              
+              <a class="btn btn-lg learn-more" href="#features">Learn more</a>              
             </div>
           </div>
         </div>
 
-        <div id="features">
+        <div id="features" class="animation">
           <div class="feature-1 feature">
             <div class="container">
               <div class="row">
                 <div class="feature-description col-md-5">
-                  <h2>Listen to music we know you like</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>                
+                  <h2>The future of music at your fingertips</h2>
+                  <p>SoundCloud has become a predominant way of sharing music creativity. We believe that an 11 year old boy on SoundCloud could reinvent the future of music. Uncovr will help you discover this amazing talent via a simple radio that learns about your taste in music and brings these artists to you.</p>                
                 </div>
                 <div class="featured-image col-md-7">
                   <img src="images/feature-browser.png" width="668" height="758" />   
@@ -47,11 +47,25 @@
           <div class="feature-2 feature">
              <div class="container">
               <div class="row">
-                <div class="feature-description col-md-4 col-md-push-7">
-                  <h2>Enjoy it everywhere and anywhere you go</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>                
+                <div class="feature-description col-md-5 col-md-push-7">
+                  <h2>Recommendations just got better</h2>
+                  <p>We have mastered the art of helping individuals discover music they will enjoy. Our system will learn and improve music you listen to, in real time. The more you listen, the better recommendations we can give you! We call this gaining music fuel!</p>                
                 </div>
-                <div class="featured-image col-md-6 col-md-pull-4">
+                <div class="featured-image col-md-6 col-md-pull-5">
+                  <img src="images/feature-beats.png" width="476" height="406" />   
+                </div>  
+              </div>
+            </div>
+          </div>
+          <div class="feature-2 feature">
+             <div class="container">
+              <div class="row">
+                <div class="feature-description col-md-6">
+                  <h2>Connect with Hypem &amp; Soundcloud</h2>
+                  <p>Tell us the kind of music you like by simply signing in via Hypem and Soundcloud. 
+                     We’ll take care of the rest. </p>                
+                </div>
+                <div class="featured-image col-md-6">
                   <img src="images/feature-beats.png" width="476" height="406" />   
                 </div>  
               </div>
@@ -71,8 +85,8 @@
              <div class="container">
               <div class="row">
                 <div class="feature-description col-md-4">
-                  <h2>Enjoy it everywhere and anywhere you go</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>                
+                  <h2>Love it everywhere and anywhere you go</h2>
+                  <p>Take your music wherever you go. Experience your personal music radio on the web, then the beautiful mobile app</p>                
                 </div>
                 <div class="featured-image col-md-8" style="text-align:center">
                   <img src="images/feature-iphone.png" width="448" height="519" />   
@@ -82,11 +96,12 @@
           </div>
         </div>
 
-        <div id="signup">
+        <div id="signup" class="animation">
           <div class="container">
             <div class="signup-leader center-block">
               <h2>Signup for the Beta</h2>
               <p>It's simple, easy and fast!</p>
+              <input type="text" placeholder="Hypem or SoundCloud username" />
               <input type="text" placeholder="Email Address" />
             </div>
           </div>
@@ -111,6 +126,7 @@
 
         <!-- build:js scripts/main.js -->
         <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/jquery-waypoints/waypoints.js"></script>
         <script src="scripts/main.js"></script>
         <script src="scripts/hello.js"></script>
         <script src="scripts/midway.js"></script>

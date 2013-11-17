@@ -75,19 +75,11 @@ p {
     }
   }
 
-  // Visibility Elements
-  .feature-1, .feature-4 {
-    .featured-image, .feature-description { visibility:hidden; }
-  }
-
   .feature-1 {
     padding:0px;
     height:700px;
     overflow:hidden;
 
-    .featured-image {
-      visibility:hidden;
-    }
     .feature-description {
       margin-top:260px;
     }
@@ -145,9 +137,52 @@ p {
 
 // Animation Settings
 
-#signup .signup-leader, .feature-2 .feature-description, .hero-content {
-  visibility:hidden;
+.animation {
+  .feature {
+    .featured-image, .feature-description { .transition(all 500ms ease-out); opacity:0; }
+    .featured-image { .scale(0.8); }
+    .feature-description { .translateX(-50px); }
+
+    &.feature-2 {
+      .featured-image { .scale(0.6); }
+    }
+    &.feature-4 {
+      .featured-image { .scale(1); .translateX(100px); }
+    }
+  }
+  .signup-leader, .feature-3 { visibility: hidden; }
 }
-.feature-1, .feature-4 {
-  .featured-image, .feature-description { visibility:hidden; }
+.animate {
+      .featured-image, .feature-description {  opacity:1 !important; }
+      .featured-image { .scale(1) !important;}
+      .feature-description {.translateX(0) !important;   }
+
+      .feature-4 {
+        .featured-image {.translateX(0) !important;}
+      }
+
+
+    }
+
+@media only screen and (max-width: @screen-sm) {
+  * {
+   /*CSS transitions*/
+   -o-transition-property: none !important;
+   -moz-transition-property: none !important;
+   -ms-transition-property: none !important;
+   -webkit-transition-property: none !important;
+   transition-property: none !important;
+   /*CSS transforms*/
+   -o-transform: none !important;
+   -moz-transform: none !important;
+   -ms-transform: none !important;
+   -webkit-transform: none !important;
+   transform: none !important;
+   /*CSS animations*/
+   -webkit-animation: none !important;
+   -moz-animation: none !important;
+   -o-animation: none !important;
+   -ms-animation: none !important;
+   animation: none !important;
+  }
 }
