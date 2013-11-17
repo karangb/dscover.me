@@ -1,6 +1,16 @@
 @import "../bower_components/bootstrap/less/bootstrap.less";
 @icon-font-path: "../fonts/glyphicons/";
+@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400,700);
 
+body, h1, h2, h3, h4,
+h5, button {
+  font-family: 'proxima-nova', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-weight:300 !important;
+}
+p {
+  font-size:18px;
+  font-weight:300;
+}
 .browsehappy {
   margin: 0.2em 0; 
   background: #ccc; 
@@ -16,22 +26,109 @@
   background: url("../images/hero.jpg") no-repeat top center;
   background-size: cover;
   color: #fff;
-  height:808px;
-  padding-top:30px;
+  height:700px;
+  padding-top:60px;
+
   h1, h2, h5 { margin:0; }
+
   h1 {
     font-size: 30px;
     font-weight:normal;
     color: rgba(255,255,255,0.5);
-    margin-bottom:200px;
   }
   h5 {
     font-size: 18px;
     font-style:italic;
+    color: rgba(255,255,255,0.5);
     font-weight:normal;
+    margin-bottom:5px;
   }
   h2 {
     font-weight:normal;
-    font-size:60px;
+    font-size:70px;
+    margin-bottom:50px;
   }
+
+  .learn-more {
+    border:2px solid rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.5);
+    border-radius: 300px;
+
+    &:hover { border-color:#fff; color: #fff; }
+  }
+}
+
+#features {
+  .feature {
+    border-bottom:1px solid #ddd;
+    padding: 40px 0;
+
+    h2 {
+      font-size:36px;
+    }
+  }
+
+  // Visibility Elements
+  .feature-1, .feature-4 {
+    .featured-image, .feature-description { visibility:hidden; }
+  }
+
+  .feature-1 {
+    padding:0px;
+    height:700px;
+    overflow:hidden;
+
+    .featured-image {
+      visibility:hidden;
+    }
+    .feature-description {
+      margin-top:260px;
+    }
+
+  }
+  .feature-2 {
+    padding: 80px 0;
+    .feature-description {
+      margin-top:98px;
+    }
+  }
+  .feature-3 {
+    .img-retina("../images/feature-tracks.jpg", "../images/feature-tracks@2x.jpg", 100%, 100%);
+    height:450px;
+    text-align:center;
+    background-size:cover;
+  }
+  .feature-4 {
+    padding-top:60px;
+    padding-bottom:0px;
+    border:none;
+    .feature-description {
+      margin-top:160px;
+    }
+  }
+  .feature-description {
+
+  }
+}
+#signup {
+  background-color:#000;
+  .img-retina("../images/signup-bg.jpg", "../images/signup-bg@2x.jpg", 100%, 100%);
+  padding:130px 0;
+
+  .signup-leader {
+    color:#fff;
+    text-align:center;
+    h2 { font-size: 36px; }
+    p { margin-bottom:30px; font-size: 20px;}
+    input { border-radius:35px;}
+  }
+}
+
+// Animation Settings
+
+#signup .signup-leader, .feature-2 .feature-description, .hero-content {
+  visibility:hidden;
+}
+.feature-1, .feature-4 {
+  .featured-image, .feature-description { visibility:hidden; }
 }

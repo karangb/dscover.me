@@ -11,18 +11,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/czq7eys.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <!-- endbuild -->
   </head>
   <body>
     <div class="wrapper">
         <div id="hero">
-          <div class="container">
+          <div class="container" >
             <h1>uncovr</h1>
-            <h5>The new way to...</h5>
-            <h2>Discover Music</h2>
-            <a class="btn btn-lg btn-primary" href="#">learn more</a>
+            <div class="hero-content midway-vertical midway fadeIn">
+              <h5>The new way to...</h5>
+              <h2>Discover.<br /> Play. Share.</h2>
+              <a class="btn btn-lg learn-more" href="#features" data-spy="scroll" data-target="#features">learn more</a>              
+            </div>
+          </div>
+        </div>
+
+        <div id="features">
+          <div class="feature-1 feature">
+            <div class="container">
+              <div class="row">
+                <div class="feature-description col-md-5">
+                  <h2>Listen to music we know you like</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>                
+                </div>
+                <div class="featured-image col-md-7" style="overflow:hidden;">
+                  <img src="images/feature-browser@2x.png" width="668" height="758" />   
+                </div>  
+              </div>
+            </div>
+          </div>
+          <div class="feature-2 feature">
+             <div class="container">
+              <div class="row">
+                <div class="feature-description col-md-4 col-md-push-7">
+                  <h2>Enjoy it everywhere and anywhere you go</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>                
+                </div>
+                <div class="featured-image col-md-6 col-md-pull-4">
+                  <img src="images/feature-beats@2x.png" width="476" height="406" />   
+                </div>  
+              </div>
+            </div>
+          </div>
+          <div class="feature-3 feature">
+            <div class="container">
+              <div class="row">
+                <div class="feature-description col-md-6 col-md-offset-3 ">
+                  <h2>Thousands of Music Tracks</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>                
+                </div> 
+              </div>
+            </div>
+          </div>
+          <div class="feature-4 feature">
+             <div class="container">
+              <div class="row">
+                <div class="feature-description col-md-4">
+                  <h2>Enjoy it everywhere and anywhere you go</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>                
+                </div>
+                <div class="featured-image col-md-8" style="text-align:center">
+                  <img src="images/feature-iphone@2x.png" width="448" height="519" />   
+                </div>  
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="signup">
+          <div class="container">
+            <div class="signup-leader center-block">
+              <h2>Signup for the Beta</h2>
+              <p>It's simple, easy and fast!</p>
+              <input type="text" placeholder="Email Address" />
+            </div>
           </div>
         </div>
     </div>
@@ -47,6 +114,8 @@
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="scripts/main.js"></script>
         <script src="scripts/hello.js"></script>
+        <script src="scripts/midway.js"></script>
+        <script src="scripts/scrollto.js"></script>
         <!-- endbuild -->
 
         <!-- build:js scripts/vendor/bootstrap.js -->

@@ -206,7 +206,7 @@ table {
   img {
     max-width: 100% !important;
   }
-  @page {
+  @page  {
     margin: 2cm .5cm;
   }
   p,
@@ -548,8 +548,10 @@ dd {
   .dl-horizontal dd:after {
     content: " ";
     /* 1 */
+  
     display: table;
     /* 2 */
+  
   }
   .dl-horizontal dd:after {
     clear: both;
@@ -558,8 +560,10 @@ dd {
   .dl-horizontal dd:after {
     content: " ";
     /* 1 */
+  
     display: table;
     /* 2 */
+  
   }
   .dl-horizontal dd:after {
     clear: both;
@@ -672,8 +676,10 @@ pre code {
 .container:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .container:after {
   clear: both;
@@ -682,8 +688,10 @@ pre code {
 .container:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .container:after {
   clear: both;
@@ -696,8 +704,10 @@ pre code {
 .row:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .row:after {
   clear: both;
@@ -706,8 +716,10 @@ pre code {
 .row:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .row:after {
   clear: both;
@@ -1589,6 +1601,7 @@ input[type="checkbox"] {
   margin: 4px 0 0;
   margin-top: 1px \9;
   /* IE8-9 */
+
   line-height: normal;
 }
 input[type="file"] {
@@ -1870,8 +1883,10 @@ textarea.input-lg {
 .form-horizontal .form-group:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .form-horizontal .form-group:after {
   clear: both;
@@ -1880,8 +1895,10 @@ textarea.input-lg {
 .form-horizontal .form-group:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .form-horizontal .form-group:after {
   clear: both;
@@ -3047,8 +3064,10 @@ input[type="button"].btn-block {
 .btn-toolbar:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .btn-toolbar:after {
   clear: both;
@@ -3057,8 +3076,10 @@ input[type="button"].btn-block {
 .btn-toolbar:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .btn-toolbar:after {
   clear: both;
@@ -3162,8 +3183,10 @@ input[type="button"].btn-block {
 .btn-group-vertical > .btn-group:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .btn-group-vertical > .btn-group:after {
   clear: both;
@@ -3172,8 +3195,10 @@ input[type="button"].btn-block {
 .btn-group-vertical > .btn-group:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .btn-group-vertical > .btn-group:after {
   clear: both;
@@ -3374,8 +3399,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .nav:after {
   clear: both;
@@ -3384,8 +3411,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .nav:after {
   clear: both;
@@ -3607,8 +3636,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .navbar:after {
   clear: both;
@@ -3617,8 +3648,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .navbar:after {
   clear: both;
@@ -3632,8 +3665,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-header:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .navbar-header:after {
   clear: both;
@@ -3642,8 +3677,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-header:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .navbar-header:after {
   clear: both;
@@ -3666,8 +3703,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-collapse:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .navbar-collapse:after {
   clear: both;
@@ -3676,8 +3715,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-collapse:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .navbar-collapse:after {
   clear: both;
@@ -4239,8 +4280,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .pager:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .pager:after {
   clear: both;
@@ -4249,8 +4292,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .pager:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .pager:after {
   clear: both;
@@ -4729,8 +4774,10 @@ a.list-group-item.active:focus .list-group-item-text {
 .panel-body:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .panel-body:after {
   clear: both;
@@ -4739,8 +4786,10 @@ a.list-group-item.active:focus .list-group-item-text {
 .panel-body:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .panel-body:after {
   clear: both;
@@ -5098,8 +5147,10 @@ button.close {
 .modal-footer:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .modal-footer:after {
   clear: both;
@@ -5108,8 +5159,10 @@ button.close {
 .modal-footer:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .modal-footer:after {
   clear: both;
@@ -5540,8 +5593,10 @@ button.close {
 .clearfix:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .clearfix:after {
   clear: both;
@@ -6138,4 +6193,3 @@ p {
 .feature-4 .feature-description {
   visibility: hidden;
 }
-/*# sourceMappingURL=/styles/main.css.map */
