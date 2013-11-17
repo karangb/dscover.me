@@ -41,10 +41,5 @@ $(window).scroll(function() {
       $(this).addClass("fadeIn");
     }
   });
-  $('.learn-more').click( function() {
-    $('#features').ScrollTo({
-    });
-  });
-
 
 });
