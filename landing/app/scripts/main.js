@@ -13,7 +13,7 @@ if ($(window).height() >= 980) {
                 $this.addClass("animate");
             }
         },
-        offset: '85%'
+        offset: '75%'
     });
 } else {
     $(".feature").waypoint({
@@ -33,7 +33,7 @@ if ($(window).height() >= 980) {
       handler: function(direction) {
         $(this).find('.signup-leader').addClass('fade-in');
       },
-      offset: '50%'
+      offset: '75%'
     });
 
     $(".feature-3").waypoint({
