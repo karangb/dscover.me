@@ -6339,11 +6339,13 @@ p {
     vertical-align: middle !important;
     font: 0/0 serif !important;
     margin: 0px !important;
+    padding: 60% 0;
     text-shadow: none !important;
     color: transparent !important;
     background-size: 100% !important;
     background-position: 50% 50% !important;
     text-align: center !important;
+    height: auto !important;
     background-repeat: no-repeat !important;
   }
   #features .feature-image .inner {
@@ -6354,6 +6356,9 @@ p {
     padding: 0 !important;
     margin: 0 !important;
     text-align: center;
+  }
+  #features .fingertips .feature-image {
+    background-image: url("../images/feature-browser-sm.jpg") !important;
   }
 }
 /*# sourceMappingURL=/styles/main.css.map */
