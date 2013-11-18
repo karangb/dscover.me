@@ -13,7 +13,7 @@ if ($(window).height() >= 980) {
                 $this.addClass("animate");
             }
         },
-        offset: '75%'
+        offset: '85%'
     });
 } else {
     $(".feature").waypoint({
