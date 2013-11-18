@@ -6155,6 +6155,10 @@ p {
   border-bottom: 1px solid #ddd;
   padding: 40px 0;
 }
+#features .feature .feature-image {
+  position: absolute;
+  top: 50%;
+}
 #features .feature .container {
   position: relative;
 }
@@ -6186,24 +6190,48 @@ p {
 }
 #features .fingertips {
   padding: 0px;
-  height: 700px;
   overflow: hidden;
 }
 #features .fingertips .feature-description {
   padding-top: 230px;
 }
-#features .suggest {
-  padding: 80px 0;
+#features .fingertips .container {
+  height: 750px;
+}
+#features .fingertips .feature-image {
+  margin-top: -379px;
+  height: 758px;
+  top: auto;
+  bottom: 0;
+  width: 668px;
+  background-image: url("../images/feature-browser.jpg");
+  background-position: bottom center;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  #features .fingertips .feature-image {
+    background-image: url("../images/feature-browser@2x.jpg");
+    background-size: 100% 100%;
+  }
 }
 #features .suggest .feature-description {
-  margin-top: 98px;
+  padding: 150px 0;
+}
+#features .suggest .feature-image {
+  margin-top: -225px;
+  width: 437px;
+  height: 450px;
+  background-image: url("../images/feature-suggest.png");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  #features .suggest .feature-image {
+    background-image: url("../images/feature-suggest@2x.png");
+    background-size: 100% 100%;
+  }
 }
 #features .connect .feature-description {
   padding: 100px 0;
 }
 #features .connect .feature-image {
-  position: absolute;
-  top: 50%;
   background-image: url("../images/feature-connect.jpg");
   background-position: center center;
   width: 372px;
@@ -6236,8 +6264,26 @@ p {
   padding-bottom: 0px;
   border: none;
 }
+#features .mobile-app .container {
+  height: 590px;
+  overflow: hidden;
+}
 #features .mobile-app .feature-description {
   margin-top: 160px;
+}
+#features .mobile-app .feature-image {
+  width: 487px;
+  top: auto;
+  height: 570px;
+  bottom: -5px;
+  margin-top: -285px;
+  background-image: url("../images/feature-iphone.jpg");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  #features .mobile-app .feature-image {
+    background-image: url("../images/feature-iphone@2x.jpg");
+    background-size: 100% 100%;
+  }
 }
 #signup {
   background-color: #000;

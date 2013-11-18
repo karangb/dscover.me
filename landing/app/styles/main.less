@@ -99,7 +99,11 @@ p {
   .feature {
     border-bottom:1px solid #ddd;
     padding: 40px 0;
-    
+
+    .feature-image {
+      position:absolute;
+      top:50%;
+    }   
     .container { position:relative; }
     h2 {
       font-size:24px;
@@ -127,18 +131,35 @@ p {
 
   .fingertips {
     padding:0px;
-    height:700px;
     overflow:hidden;
 
     .feature-description {
       padding-top:230px;
     }
+    .container {
+      height:750px;
+    }
+    .feature-image {
+      margin-top:-379px;
+      height:758px;
+      top:auto;
+      bottom:0;
+      width:668px;
+      .img-retina("../images/feature-browser.jpg", "../images/feature-browser@2x.jpg", 100%, 100%);
+      background-position:bottom center;
+    }
 
   }
   .suggest {
-    padding: 80px 0;
     .feature-description {
-      margin-top:98px;
+      padding:150px 0;
+    }
+    .feature-image {
+      margin-top:-225px;
+      width:437px;
+      height:450px;
+      .img-retina("../images/feature-suggest.png", "../images/feature-suggest@2x.png", 100%, 100%);
+
     }
   }
   .connect {
@@ -146,8 +167,6 @@ p {
       padding:100px 0;
     }
     .feature-image {
-      position:absolute;
-      top:50%;
       .img-retina("../images/feature-connect.jpg", "../images/feature-connect@2x.jpg", 100%, 100%);
       background-position:center center;
       width:372px;
@@ -168,8 +187,21 @@ p {
     padding-top:60px;
     padding-bottom:0px;
     border:none;
+
+    .container {
+      height:590px;
+      overflow:hidden;
+    }
     .feature-description {
       margin-top:160px;
+    }
+    .feature-image {
+      width: 487px;
+      top: auto;
+      height:570px;
+      bottom:-5px;
+      margin-top:-285px;
+    .img-retina("../images/feature-iphone.jpg", "../images/feature-iphone@2x.jpg", 100%, 100%);
     }
   }
   .feature-description {
