@@ -6303,7 +6303,7 @@ p {
   -ms-transform: translateX(0) !important;
   transform: translateX(0) !important;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
   * {
     /*CSS transitions*/
     -o-transition-property: none !important;
@@ -6323,6 +6323,37 @@ p {
     -o-animation: none !important;
     -ms-animation: none !important;
     animation: none !important;
+  }
+  #features .feature {
+    padding: 40px 0 !important;
+  }
+  #features .feature .container {
+    height: auto !important;
+  }
+  #features .feature-image {
+    position: inherit !important;
+    top: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    font: 0/0 serif !important;
+    margin: 0px !important;
+    text-shadow: none !important;
+    color: transparent !important;
+    background-size: 100% !important;
+    background-position: 50% 50% !important;
+    text-align: center !important;
+    background-repeat: no-repeat !important;
+  }
+  #features .feature-image .inner {
+    display: block  !important;
+    height: 0 !important;
+  }
+  #features .feature-description {
+    padding: 0 !important;
+    margin: 0 !important;
+    text-align: center;
   }
 }
 /*# sourceMappingURL=/styles/main.css.map */

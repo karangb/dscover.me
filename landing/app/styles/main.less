@@ -249,7 +249,7 @@ p {
 
     }
 
-@media only screen and (max-width: @screen-sm) {
+@media only screen and (max-width: @screen-md) {
   * {
    /*CSS transitions*/
    -o-transition-property: none !important;
@@ -269,5 +269,44 @@ p {
    -o-animation: none !important;
    -ms-animation: none !important;
    animation: none !important;
+  }
+  #features {
+    .feature {
+      padding: 40px 0 !important;
+
+      .container {
+        height: auto !important;
+
+      }
+    }
+    .feature-image {
+      position:inherit !important;
+      top:auto !important;
+      bottom: auto !important;
+      width: 100% !important;
+      display: inline-block !important;
+      vertical-align: middle !important;
+      font: 0/0 serif !important;
+      margin:0px !important;
+      text-shadow: none !important;
+      color: transparent !important;
+      background-size: 100% !important;
+      background-position: 50% 50% !important;
+      text-align:center !important;
+      background-repeat: no-repeat !important;
+
+      .inner {
+
+        display: block  !important;
+        height: 0 !important;
+      }
+    }
+    .feature-description {
+      padding: 0 !important;
+      margin:0 !important;
+      text-align:center;
+    }
+    .fingertips .feature-image {
+    }
   }
 }
