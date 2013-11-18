@@ -1,6 +1,10 @@
 @import "animations.css";
 
 @import url(http://fonts.googleapis.com/css?family=Quicksand:300,400,700);
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,100italic,300italic,400italic,500italic);
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300);
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 article,
 aside,
@@ -6054,13 +6058,33 @@ h2,
 h3,
 h4,
 h5,
-button {
-  font-family: 'proxima-nova', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  font-weight: 300 !important;
+button,
+a {
+  font-family: "Roboto", Helvetica, Arial, sans-serif !important;
+  font-weight: 100 !important;
+}
+input.rounded {
+  border-radius: 300px;
+  border: none;
+  margin-right: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+  padding: 12px 18px;
+}
+input:focus {
+  outline: none;
+}
+#send {
+  margin-left: -3px;
+  border-radius: 300px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
 }
 p {
-  font-size: 18px;
-  font-weight: 300;
+  font-size: 16px;
+  line-height: 25px;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 100;
 }
 .browsehappy {
   margin: 0.2em 0;
@@ -6077,6 +6101,9 @@ p {
   color: #fff;
   height: 700px;
   padding-top: 60px;
+}
+#hero .hero-content {
+  padding-left: 0px !important;
 }
 #hero h1,
 #hero h2,
@@ -6105,6 +6132,11 @@ p {
 #hero h2 {
   font-weight: normal;
   font-size: 70px;
+  margin-bottom: 20px;
+}
+#hero p {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
   margin-bottom: 50px;
 }
 #hero .learn-more {
@@ -6120,45 +6152,88 @@ p {
   border-bottom: 1px solid #ddd;
   padding: 40px 0;
 }
-#features .feature h2 {
-  font-size: 36px;
+#features .feature .container {
+  position: relative;
 }
-#features .feature-1 {
+#features .feature h2 {
+  font-size: 24px;
+  color: #888;
+  margin-bottom: 20px;
+}
+#features .feature h2 span {
+  font-size: 55px;
+  margin-left: -2px;
+  display: block;
+  color: black;
+}
+#features .feature h2.leader {
+  font-size: 40px;
+  color: black;
+}
+#features .feature h2.leader span {
+  display: inline;
+  font-size: inherit;
+  margin-left: inherit;
+}
+#features .feature .blue {
+  color: #3a7dd8;
+}
+#features .feature .purple {
+  color: #b13ad8;
+}
+#features .fingertips {
   padding: 0px;
   height: 700px;
   overflow: hidden;
 }
-#features .feature-1 .feature-description {
-  margin-top: 260px;
+#features .fingertips .feature-description {
+  padding-top: 230px;
 }
-#features .feature-2 {
+#features .suggest {
   padding: 80px 0;
 }
-#features .feature-2 .feature-description {
+#features .suggest .feature-description {
   margin-top: 98px;
 }
-#features .feature-3 {
-  padding-top: 80px 0;
+#features .connect .feature-description {
+  padding: 100px 0;
+}
+#features .connect .feature-image {
+  position: absolute;
+  top: 50%;
+  background-image: url("../images/feature-connect.jpg");
+  background-position: center center;
+  width: 372px;
+  margin-top: -124px;
+  height: 248px;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  #features .connect .feature-image {
+    background-image: url("../images/feature-connect@2x.jpg");
+    background-size: 100% 100%;
+  }
+}
+#features .music-tracks {
+  padding-top: 80px;
   border-bottom: 0px;
   background-image: url("../images/feature-tracks.jpg");
   background-repeat: no-repeat;
-  background-position: 0px 50px;
-  height: 450px;
+  height: 550px;
   text-align: center;
   background-size: cover;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  #features .feature-3 {
+  #features .music-tracks {
     background-image: url("../images/feature-tracks@2x.jpg");
-    background-size: 100% 100%;
+    background-size: cover cover;
   }
 }
-#features .feature-4 {
+#features .mobile-app {
   padding-top: 60px;
   padding-bottom: 0px;
   border: none;
 }
-#features .feature-4 .feature-description {
+#features .mobile-app .feature-description {
   margin-top: 160px;
 }
 #signup {
@@ -6182,26 +6257,17 @@ p {
 #signup .signup-leader p {
   margin-bottom: 30px;
   font-size: 20px;
+  font-weight: 100;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
 }
-#signup .signup-leader input {
-  border-radius: 35px;
-  padding: 12px 15px;
-  text-align: center;
-  width: 30%;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border: none;
-}
-#signup .signup-leader input:focus {
-  outline: none;
-}
-.animation .feature .featured-image,
+.animation .feature .feature-image,
 .animation .feature .feature-description {
   -webkit-transition: all 500ms ease-out;
   transition: all 500ms ease-out;
   opacity: 0;
 }
-.animation .feature .featured-image {
+.animation .feature .feature-image {
   -webkit-transform: scale(0.8);
   -ms-transform: scale(0.8);
   transform: scale(0.8);
@@ -6211,12 +6277,12 @@ p {
   -ms-transform: translateX(-50px);
   transform: translateX(-50px);
 }
-.animation .feature.feature-2 .featured-image {
+.animation .feature.suggest .feature-image {
   -webkit-transform: scale(0.6);
   -ms-transform: scale(0.6);
   transform: scale(0.6);
 }
-.animation .feature.feature-4 .featured-image {
+.animation .feature.mobile-app .feature-image {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
@@ -6224,15 +6290,14 @@ p {
   -ms-transform: translateX(100px);
   transform: translateX(100px);
 }
-.animation .signup-leader,
-.animation .feature-3 {
+.animation .signup-leader {
   visibility: hidden;
 }
-.animate .featured-image,
+.animate .feature-image,
 .animate .feature-description {
   opacity: 1 !important;
 }
-.animate .featured-image {
+.animate .feature-image {
   -webkit-transform: scale(1) !important;
   -ms-transform: scale(1) !important;
   transform: scale(1) !important;
@@ -6242,7 +6307,7 @@ p {
   -ms-transform: translateX(0) !important;
   transform: translateX(0) !important;
 }
-.animate .feature-4 .featured-image {
+.animate .mobile-app .feature-image {
   -webkit-transform: translateX(0) !important;
   -ms-transform: translateX(0) !important;
   transform: translateX(0) !important;
