@@ -6086,6 +6086,23 @@ p {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 100;
 }
+.get-notified .inner {
+  background: #fff;
+  border-radius: 35px;
+  display: inline-block;
+}
+.get-notified input {
+  border-radius: 0px;
+  padding-left: 20px;
+  background: transparent !important;
+}
+.get-notified #send {
+  padding: 10px 14px;
+  border-radius: 300px;
+  line-height: 16px;
+  font-size: 14px;
+  margin-right: 3px;
+}
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -6213,18 +6230,21 @@ p {
     background-size: 100% 100%;
   }
 }
+#features .suggest {
+  background: #fafafa;
+}
 #features .suggest .feature-description {
   padding: 150px 0;
 }
 #features .suggest .feature-image {
-  margin-top: -225px;
-  width: 437px;
-  height: 450px;
-  background-image: url("../images/feature-suggest.png");
+  margin-top: -183px;
+  width: 367px;
+  height: 366px;
+  background-image: url("../images/feature-fuel.png");
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   #features .suggest .feature-image {
-    background-image: url("../images/feature-suggest@2x.png");
+    background-image: url("../images/feature-fuel@2x.png");
     background-size: 100% 100%;
   }
 }
@@ -6235,8 +6255,8 @@ p {
   background-image: url("../images/feature-connect.jpg");
   background-position: center center;
   width: 372px;
-  margin-top: -124px;
-  height: 248px;
+  margin-top: -164px;
+  height: 328px;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   #features .connect .feature-image {
@@ -6384,6 +6404,22 @@ p {
     -o-animation: none !important;
     -ms-animation: none !important;
     animation: none !important;
+  }
+  .row {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  #hero {
+    height: auto !important;
+  }
+  #hero h1 {
+    margin-bottom: 30px ;
+  }
+  #hero .hero-content {
+    margin: 0;
+  }
+  #hero h2 {
+    font-size: 40px;
   }
   #features .feature {
     padding: 40px 0 !important;
