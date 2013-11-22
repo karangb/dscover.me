@@ -11,8 +11,17 @@
                       <a class="navbar-brand" href="#">dscovr</a>
                     </div>
                     <div class="navbar-collapse collapse" ng-controller="LoginCtrl">
-                        <ul class="nav navbar-nav navbar-right">
-                               <li><a href="#" ng-click="open()">Login</a></li>
+                        <ul class="nav navbar-nav navbar-right" ng-show="loginName === 'Login'">
+                               <li><a href="#" ng-click="open()">{{ loginName }}</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right" ng-show="loginName !== 'Login'">
+                               <li class="has-dropdown">
+                               <a href="#">{{ loginName }}</a>
+                                  <ul class="dropdown">
+                                    <li><a href="#">Dashboard</a></li>
+                                    <li><a href="#">Change username</a></li>
+                                  </ul>
+                               </li>
                         </ul>
                     </div>
                   </div>

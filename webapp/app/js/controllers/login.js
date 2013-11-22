@@ -1,9 +1,7 @@
 'use strict';
 angular.module('dscover.me')
-.controller('LoginCtrl', function ($scope, $modal, $http ) {
-
-
-    $scope.items = ['item1', 'item2', 'item3'];
+.controller('LoginCtrl', function ($rootScope, $scope, $modal, $http ) {
+    $rootScope.loginName = "Login";
     $scope.open = function (modalName) {
         var modalInstance = $modal.open({
             templateUrl: 'partials/login.html',
@@ -13,16 +11,9 @@ angular.module('dscover.me')
             }
         });
         console.log('modal opened');
-        modalInstance.result.then(function (response) {
-            $scope.selected = response;
-            console.log(response);
-        }, function () {
-            console.log('Modal dismissed at: ' + new Date());
-        });
     };
 })
 .controller('modalController', function ($scope, $rootScope, $http, $modalInstance, items, fetchTracks, player, audio) {
-
 
     $scope.ok = function () {
         $modalInstance.close($scope.selected.item);
@@ -32,13 +23,14 @@ angular.module('dscover.me')
         $modalInstance.dismiss('cancel');
         console.log('cancel');
     };
-
     $scope.login = function(hypemUser) {
         fetchTracks.recommendations(hypemUser).success( function(response) {
             $rootScope.tracks = response.tracks;
             audio.pause();
             player.play();
             $modalInstance.dismiss('cancel');
+            $rootScope.loginName = hypemUser;
         })
+
     };
 })
