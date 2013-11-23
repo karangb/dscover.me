@@ -12,8 +12,8 @@
                     </div>
                     <div class="navbar-collapse collapse" ng-controller="LoginCtrl">
                         <ul class="nav navbar-nav navbar-right">
-                               <li><a href="#" ng-click="open()">{{ loginName() }}</a></li>
-                               <li class="dropdown" ng-show="">
+                               <li ng-hide="lastUser"><a href="#" ng-click="open()">{{ loginName() }}</a></li>
+                               <li class="dropdown" ng-show="lastUser">
                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ loginName() }}</a>
                                   <ul class="dropdown-menu">
                                     <li><a href="#" ng-click="open()">Change username</a></li>
