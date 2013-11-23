@@ -12,17 +12,15 @@
                     </div>
                     <div class="navbar-collapse collapse" ng-controller="LoginCtrl">
                         <ul class="nav navbar-nav navbar-right">
-                               <li ng-show="loginName === 'Login'"><a href="#" ng-click="open()">{{ loginName }}</a></li>
-                               <li class="dropdown" ng-show="loginName !== 'Login'">
-                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ loginName }}</a>
+                               <li><a href="#" ng-click="open()">{{ loginName() }}</a></li>
+                               <li class="dropdown" ng-show="">
+                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ loginName() }}</a>
                                   <ul class="dropdown-menu">
                                     <li><a href="#" ng-click="open()">Change username</a></li>
                                   </ul>
                                </li>
                         </ul>
-                        <ul class="nav navbar-nav navbar-right" ng-show="loginName !== 'Login'">
-                               
-                        </ul>
+
                     </div>
                   </div>
                 </div>

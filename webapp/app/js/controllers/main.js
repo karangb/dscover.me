@@ -2,7 +2,7 @@
 
 
 angular.module('dscover.me')
-.controller('MainCtrl', function ($scope, $http, audio, $compile, fetchTracks)  {
+.controller('MainCtrl', function ($scope, $http, audio, $compile, fetchTracks, $cookieStore)  {
 		$scope.title = 'dscover.me';
 })
 
