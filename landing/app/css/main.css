@@ -6398,7 +6398,9 @@ p {
   transform: translateX(0) !important;
 }
 @media only screen and (max-width: 992px) {
-  * {
+  *,
+  .animation,
+  .animate {
     /*CSS transitions*/
   
     -o-transition-property: none !important;
@@ -6427,6 +6429,9 @@ p {
   }
   #hero {
     height: auto !important;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   #hero h1 {
     margin-bottom: 30px ;
@@ -6437,11 +6442,49 @@ p {
   #hero h2 {
     font-size: 40px;
   }
+  #hero p {
+    margin: 0 0 10px 0;
+  }
+  .get-notified .inner {
+    background: none;
+    border: none;
+  }
+  .get-notified .form-group {
+    display: inline-block;
+    margin-bottom: 0px;
+  }
+  .get-notified input {
+    background: #fff !important;
+    border-radius: 5px;
+    font-size: 13px;
+  }
+  .get-notified #send {
+    margin-left: 5px;
+    border-radius: 5px;
+    padding: 12px 18px;
+  }
   #features .feature {
     padding: 40px 0 !important;
   }
   #features .feature .container {
     height: auto !important;
+  }
+  #features .feature h2 span {
+    font-size: 35px;
+  }
+  #features .feature .leader {
+    font-size: 35px !important;
+  }
+  #features .fingertips,
+  #features .mobile-app {
+    padding-bottom: 0px !important;
+  }
+  #features .fingertips .feature-image,
+  #features .mobile-app .feature-image {
+    margin-bottom: -5px !important;
+  }
+  #features .fingertips .feature-image {
+    margin-bottom: -9px !important;
   }
   #features .feature-image {
     position: inherit !important;
@@ -6470,7 +6513,25 @@ p {
     margin: 0 !important;
     text-align: center;
   }
-  #features .fingertips .feature-image {
+  .fingertips .feature-image {
     background-image: url("../images/feature-browser-sm.jpg") !important;
+  }
+  .music-tracks {
+    background-image: url("../images/feature-tracks-sm.jpg") !important;
+  }
+  .suggest .feature-image {
+    background-image: url("../images/feature-fuel-sm.png") !important;
+  }
+  .beats .feature-image {
+    background-image: url("../images/feature-suggest-sm.png") !important;
+  }
+  .mobile-app .feature-image {
+    background-image: url("../images/feature-iphone-sm.png") !important;
+  }
+  .fade-in,
+  .feature-image,
+  .feature-description {
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 }

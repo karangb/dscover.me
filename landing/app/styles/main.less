@@ -281,7 +281,7 @@ p {
     }
 
 @media only screen and (max-width: @screen-md) {
-  * {
+  *, .animation, .animate {
    /*CSS transitions*/
    -o-transition-property: none !important;
    -moz-transition-property: none !important;
@@ -301,16 +301,44 @@ p {
    -ms-animation: none !important;
    animation: none !important;
   }
+
   .row {
     margin-left: auto !important;
     margin-right: auto !important;
   }
+
   #hero {
     height: auto !important;
-    h1 { margin-bottom:30px ;}
+    text-align:center;
+    padding-top:20px;
+    padding-bottom:20px;
+    h1 { margin-bottom:30px ; }
     .hero-content { margin:0; }
     h2 {
       font-size:40px;
+    }
+    p {
+      margin:0 0 10px 0;
+    }
+  }
+  .get-notified {
+    .inner {
+      background:none;
+      border:none;
+    }
+    .form-group {
+      display:inline-block;
+      margin-bottom:0px;
+    }
+    input {
+      background:#fff !important;
+      border-radius:5px;
+      font-size:13px;
+    }
+    #send {
+      margin-left:5px;
+      border-radius:5px;
+      padding:12px 18px;
     }
   }
   #features {
@@ -319,6 +347,25 @@ p {
       padding: 40px 0 !important;
       .container {
         height: auto !important;
+      }
+      h2 { 
+        span {
+          font-size:35px;
+        }
+      }
+      .leader {
+        font-size:35px !important;        
+      }
+    }
+    .fingertips, .mobile-app {
+      padding-bottom:0px !important;
+      .feature-image {
+        margin-bottom:-5px !important;
+      }
+    }
+    .fingertips {
+      .feature-image {
+        margin-bottom:-9px !important;
       }
     }
     .feature-image {
@@ -349,9 +396,29 @@ p {
       margin:0 !important;
       text-align:center;
     }
-    .fingertips .feature-image {
-      background-image: url("../images/feature-browser-sm.jpg") !important;
+  }
 
-    }
+  // Render Mobile Images
+  .fingertips .feature-image {
+    background-image: url("../images/feature-browser-sm.jpg") !important;
+  }
+  .music-tracks {
+    background-image: url("../images/feature-tracks-sm.jpg") !important;    
+  }
+  .suggest .feature-image {
+    background-image: url("../images/feature-fuel-sm.png") !important;    
+  }
+  .beats .feature-image {
+    background-image: url("../images/feature-suggest-sm.png") !important;    
+  }
+  .mobile-app .feature-image {
+    background-image: url("../images/feature-iphone-sm.png") !important;    
+  }
+
+  // Remove transparency
+
+  .fade-in, .feature-image, .feature-description {
+      opacity:1 !important;
+     visibility:visible !important;
   }
 }

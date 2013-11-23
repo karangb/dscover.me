@@ -1,7 +1,6 @@
 console.log('\'Allo \'Allo!');
 
 
-
 if ($(window).height() >= 980) {
     $(".feature").waypoint({
         triggerOnce: true,
