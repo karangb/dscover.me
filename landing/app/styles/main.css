@@ -6028,6 +6028,12 @@ p {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 100;
 }
+.social .fb-like {
+  margin-right: 10px;
+}
+.social iframe {
+  width: 79px !important;
+}
 .get-notified .inner {
   background: #fff;
   border-radius: 35px;
@@ -6058,8 +6064,13 @@ p {
   background: url("../images/hero.jpg") no-repeat top center;
   background-size: cover;
   color: #fff;
+  position: relative;
   height: 700px;
   padding-top: 60px;
+}
+#hero .social {
+  position: absolute;
+  right: 0;
 }
 #hero .hero-content {
   padding-left: 0px !important;
@@ -6274,6 +6285,12 @@ p {
     background-size: 100% 100%;
   }
 }
+#signup .social {
+  margin-top: 20px;
+}
+#signup .social iframe {
+  width: 79px !important;
+}
 #signup .signup-leader {
   color: #fff;
   text-align: center;
@@ -6372,6 +6389,19 @@ p {
     padding-top: 20px;
     padding-bottom: 20px;
   }
+  #hero:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  #hero .social {
+    position: relative !important;
+    right: auto !important;
+  }
   #hero h1 {
     margin-bottom: 30px ;
   }
@@ -6382,7 +6412,9 @@ p {
     font-size: 40px;
   }
   #hero p {
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
+    color: #fff !important;
+    opacity: 1;
   }
   .get-notified .inner {
     background: none;

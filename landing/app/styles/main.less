@@ -31,6 +31,14 @@ p {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight:100;
 }
+.social {
+  .fb-like {
+    margin-right:10px;
+  }
+  iframe {
+    width:79px !important;
+  }
+}
 .get-notified {
   .inner {
     background:#fff;
@@ -65,9 +73,13 @@ p {
   background: url("../images/hero.jpg") no-repeat top center;
   background-size: cover;
   color: #fff;
+  position:relative;
   height:700px;
   padding-top:60px;
-
+  .social {
+    position:absolute;
+    right:0;
+  }
   .hero-content {
     padding-left:0px !important;
     margin-top:117px;
@@ -243,7 +255,12 @@ p {
   background-color:#000;
   .img-retina("../images/signup-bg.jpg", "../images/signup-bg@2x.jpg", 100%, 100%);
   padding:130px 0;
-
+  .social {
+    margin-top:20px;
+    iframe {
+      width:79px !important;
+    }
+  }
   .signup-leader {
     color:#fff;
     text-align:center;
@@ -312,13 +329,29 @@ p {
     text-align:center;
     padding-top:20px;
     padding-bottom:20px;
+
+    &:before {
+      content: "";
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      background:rgba(0,0,0,0.2);
+    }
+    .social {
+      position:relative !important;
+      right:auto !important;
+    }
     h1 { margin-bottom:30px ; }
     .hero-content { margin:0; }
     h2 {
       font-size:40px;
     }
     p {
-      margin:0 0 10px 0;
+      margin:0 0 15px 0;
+      color: #fff !important;
+      opacity:1;
     }
   }
   .get-notified {
@@ -399,6 +432,9 @@ p {
   }
 
   // Render Mobile Images
+  #hero {
+    
+  }
   .fingertips .feature-image {
     background-image: url("../images/feature-browser-sm.jpg") !important;
   }
