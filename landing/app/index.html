@@ -17,11 +17,26 @@
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <!-- endbuild -->
   </head>
+
   <body class="animation">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=444979425585208";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     <div class="wrapper">
         <div id="hero" class="fade-in">
           <div class="container">
             <h1><a href="/">uncovr</a></h1>
+            <div class="social">
+              <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="50" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+              <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.gijwi.com" data-text="SoundCloud Radio" data-via="aasananes" data-hashtags="radio">Tweet</a>
+
+            </div>
             <div class="hero-content fadeIn">
 
               <h2>Discover.<br /> Play. Share.</h2>
@@ -130,7 +145,12 @@
                   </div>
                     <a id="send" class="btn btn-lg btn-primary" href="#">Send</a>
                   </div>
-                </form> 
+                </form>
+              <div class="social">
+                <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="50" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.gijwi.com" data-text="SoundCloud Radio" data-via="aasananes" data-hashtags="radio">Tweet</a>
+
+              </div>
             </div>
           </div>
         </div>
@@ -157,8 +177,6 @@
         <script src="bower_components/jquery-waypoints/waypoints.js"></script>
         <script src="scripts/main.js"></script>
         <script src="scripts/hello.js"></script>
-        <script src="scripts/midway.js"></script>
-        <script src="scripts/scrollto.js"></script>
         <!-- endbuild -->
 
         <!-- build:js scripts/vendor/bootstrap.js -->
