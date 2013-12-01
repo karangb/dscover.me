@@ -1,11 +1,9 @@
 'use strict';
 angular.module('dscover.me')
-.controller('LoginCtrl', function ($rootScope, $scope, $modal, $http, $cookieStore) {
+.controller('LoginCtrl', function ($rootScope, $scope, $modal, $http, setLogin) {
 
         $rootScope.loginName = function() {
-                $rootScope.lastUser = $cookieStore.get('loginUser');
-                var lastUser = $rootScope.lastUser;
-                return lastUser || "Login";
+                return setLogin.lastUser() || 'Login';
         };  
 
     $scope.open = function (modalName) {
@@ -19,7 +17,7 @@ angular.module('dscover.me')
         console.log('modal opened');
     };
 })
-.controller('modalController', function ($scope, $rootScope, $http, $modalInstance, fetchTracks, player, audio, $cookieStore) {
+.controller('modalController', function ($scope, $rootScope, $http, $modalInstance, fetchTracks, player, audio, setLogin) {
 
     $scope.ok = function () {
         $modalInstance.close($scope.selected.item);
@@ -35,8 +33,7 @@ angular.module('dscover.me')
             audio.pause();
             player.play();
             $modalInstance.dismiss('cancel');
-            $rootScope.lastVal = $cookieStore.put('loginUser', hypemUser);;
-
+            setLogin.addUser(hypemUser);
         })
 
     };

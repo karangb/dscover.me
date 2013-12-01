@@ -1,8 +1,8 @@
 'use strict';
 angular.module('dscover.me')
-.controller('PlayerCtrl', function ($scope, $rootScope, $http, fetchTracks, player, $cookieStore) {
+.controller('PlayerCtrl', function ($scope, $rootScope, $http, fetchTracks, player, setLogin) {
   
-    var lastUser = $cookieStore.get('loginUser');
+    var lastUser = setLogin.lastUser();
     $scope.player = player;
 
     fetchTracks.recommendations(lastUser || 'rubehere').success(function(response) {
