@@ -20,6 +20,11 @@ input {
   }
   &:focus { outline:none; }
 }
+.btn {
+  &:focus {
+    outline: none !important;
+  }
+}
 #send {
   margin-left:-3px;
   border-radius:300px;
@@ -460,6 +465,10 @@ p {
       margin-left:5px;
       border-radius:5px;
       padding:12px 18px;
+
+      &:focus, &:active {
+        outline:none !important;
+      }
     }
   }
   #features {
