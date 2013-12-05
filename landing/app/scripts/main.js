@@ -1,9 +1,24 @@
-console.log('\'Allo \'Allo!');
+$(document).ready( function() { 
 
+console.log('\'Allo \'Allo!');
+$('.get-notified').ajaxChimp({
+    callback: callbackFunction,
+    url: 'http://uncovr.us3.list-manage1.com/subscribe/post?u=cac5b743872425783d77adbed&id=4ea6a7a327'
+});
+
+function callbackFunction (resp) {
+    if (resp.result === 'success') {
+        $('#spread').modal('show');
+    } else if(resp.result === 'error') {
+        alert("Sorry, but your email has been used before.");
+    }
+}
+
+// Hide Scroll
 $('.scroll-down').on('click', function(e) {
   e.preventDefault();
 })
-// Hide Scroll
+
 $('#features').waypoint({
   offset: '100%', // Apply "stuck" when element 30px from top
   handler: function() {
@@ -58,8 +73,6 @@ if ($(window).height() >= 980) {
       offset: '50%'
     });
 }
-// Remove Scroll
-$(function () {
 
   if (window.devicePixelRatio == 2) {
 
@@ -78,4 +91,20 @@ $(function () {
           }
      }
 
+$('.facebook,.twitter').click(function(event) {
+var width  = 575,
+    height = 400,
+    left   = ($(window).width()  - width)  / 2,
+    top    = ($(window).height() - height) / 2,
+    url    = this.href,
+    opts   = 'status=1' +
+             ',width='  + width  +
+             ',height=' + height +
+             ',top='    + top    +
+             ',left='   + left;
+
+window.open(url, 'twitter', opts);
+
+return false;
+});
 });
