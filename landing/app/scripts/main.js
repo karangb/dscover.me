@@ -1,6 +1,12 @@
 console.log('\'Allo \'Allo!');
 
-
+// Hide Scroll
+$('#features').waypoint({
+  offset: '100%', // Apply "stuck" when element 30px from top
+  handler: function() {
+    $('.scroll-down').hide();
+  }
+});
 
 if ($(window).height() >= 980) {
     $(".feature").waypoint({
@@ -43,12 +49,7 @@ if ($(window).height() >= 980) {
       offset: '50%'
     });
 }
-// Remove scroll down
-
-$("#features").waypoint(function() {
-    $('.scroll-down').hide();
-  });
-
+// Remove Scroll
 $(function () {
 
   if (window.devicePixelRatio == 2) {
