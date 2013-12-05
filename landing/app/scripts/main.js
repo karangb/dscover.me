@@ -65,12 +65,12 @@ if ($(window).height() >= 980) {
         },
         offset: '50%'
     });
-    $("#signup").waypoint({
-      handler: function(direction) {
-        $(this).find('.signup-leader').addClass('fade-in');
-      },
-      offset: '75%'
-    });
+    // $("#signup").waypoint({
+    //   handler: function(direction) {
+    //     $(this).find('.signup-leader').addClass('fade-in');
+    //   },
+    //   offset: '75%'
+    // });
 
     $(".feature-3").waypoint({
       handler: function(direction) {
