@@ -1,6 +1,7 @@
 console.log('\'Allo \'Allo!');
 
 
+
 if ($(window).height() >= 980) {
     $(".feature").waypoint({
         triggerOnce: true,
@@ -42,6 +43,11 @@ if ($(window).height() >= 980) {
       offset: '50%'
     });
 }
+// Remove scroll down
+
+$("#features").waypoint(function() {
+    $('.scroll-down').hide();
+  });
 
 $(function () {
 

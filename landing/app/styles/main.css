@@ -6060,12 +6060,36 @@ p {
 .jumbotron {
   margin: 50px auto 0 auto;
 }
+.scroll-down {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 300px;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  position: fixed;
+  line-height: 80px;
+  display: block;
+  bottom: 10px;
+  z-index: 999;
+  left: 50%;
+  color: rgba(255, 255, 255, 0.3);
+  vertical-align: middle;
+}
+.scroll-down:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.scroll-down span {
+  display: block;
+  margin-top: -60px;
+  font-size: 30px;
+}
 #hero {
-  background: url("../images/hero.jpg") no-repeat top center;
+  background: url("../images/hero.jpg") no-repeat bottom center;
   background-size: cover;
   color: #fff;
   position: relative;
-  height: 700px;
+  height: 800px;
   padding-top: 60px;
 }
 #hero .container {
@@ -6114,6 +6138,8 @@ p {
   opacity: 0.5;
   filter: alpha(opacity=50);
   margin-bottom: 50px;
+  font-size: 24px;
+  line-height: 32px;
 }
 #hero .learn-more {
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -6307,6 +6333,10 @@ p {
   font-weight: 100;
   opacity: 0.5;
   filter: alpha(opacity=50);
+}
+.animation .feature.fingertips .feature-image,
+.animation .feature.fingertips .feature-description {
+  opacity: 1 !important;
 }
 .animation .feature .feature-image,
 .animation .feature .feature-description {

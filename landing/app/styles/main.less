@@ -68,13 +68,36 @@ p {
 .jumbotron {
   margin: 50px auto 0 auto;
 }
-
+.scroll-down {
+  background:rgba(0,0,0,0.5);
+  border-radius: 300px;
+  text-align:center;
+  height:100px;
+  width:100px;
+  position:fixed;
+  line-height:80px;
+  display:block;
+  bottom:10px;
+  z-index:999;
+  left:50%;
+  color: rgba(255,255,255,0.3);
+  vertical-align:middle;
+  &:hover {
+    color: #fff;
+    text-decoration:none;
+  }
+  span {
+    display:block;
+    margin-top:-60px;
+    font-size:30px;
+  }
+}
 #hero {
-  background: url("../images/hero.jpg") no-repeat top center;
+  background: url("../images/hero.jpg") no-repeat bottom center;
   background-size: cover;
   color: #fff;
   position:relative;
-  height:700px;
+  height:800px;
   padding-top:60px;
 
   .container {
@@ -119,6 +142,8 @@ p {
   p {
     .opacity(0.5);
     margin-bottom:50px;
+    font-size:24px;
+    line-height:32px;
   }
 
   .learn-more {
@@ -277,6 +302,8 @@ p {
 
 .animation {
   .feature {
+
+    &.fingertips { .feature-image, .feature-description { opacity:1 !important; } }
     .feature-image, .feature-description { .transition(all 500ms ease-out); opacity:0; }
     .feature-image { .scale(0.8); }
     .feature-description { .translateX(-50px); }
