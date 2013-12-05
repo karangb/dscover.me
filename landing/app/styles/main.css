@@ -6102,6 +6102,7 @@ p {
 #hero .social {
   position: absolute;
   right: 0;
+  top: 0;
 }
 #hero .hero-content {
   padding-left: 0px !important;
