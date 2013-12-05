@@ -6150,6 +6150,58 @@ p {
   border-color: #fff;
   color: #fff;
 }
+#home .modal-backdrop {
+  opacity: 0.9 !important;
+  background: #022854;
+}
+#home .modal-dialog {
+  width: 95%;
+  padding: 0;
+  max-width: 600px;
+  margin: 20% auto 0;
+}
+#home .modal-content {
+  background: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
+}
+#home .modal-header {
+  border-bottom: none;
+  text-align: center;
+}
+#home .modal-title,
+#home .modal-subleader {
+  color: #fff;
+}
+#home .modal-title {
+  font-size: 54px;
+}
+#home .modal-subleader {
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.5);
+}
+#home .modal .share {
+  text-align: center;
+}
+#home .modal .share .facebook {
+  margin-right: 20px;
+  background: #4252A3;
+}
+#home .modal .share .twitter {
+  background: #25A1D5;
+}
+#home .modal .share .btn {
+  border: none;
+  line-height: 2.2em;
+}
+#home .modal .close {
+  color: #fff;
+  font-size: 80px;
+  right: 40px;
+  top: 20px;
+  position: absolute;
+}
 #features .feature {
   border-bottom: 1px solid #ddd;
   padding: 40px 0;
