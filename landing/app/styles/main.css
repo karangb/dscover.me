@@ -6433,7 +6433,7 @@ p {
   transform: translateX(100px);
 }
 .animation .signup-leader {
-  visibility: hidden;
+  visibility: visible;
 }
 #hero.animate .container {
   -webkit-transform: translateX(0px) !important;
