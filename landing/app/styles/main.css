@@ -6008,6 +6008,7 @@ a {
 input.rounded {
   border-radius: 300px;
   border: none;
+  width: 250px;
   margin-right: 0px;
   border-bottom-right-radius: 0px;
   border-top-right-radius: 0px;
