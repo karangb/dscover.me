@@ -1,16 +1,22 @@
 $(document).ready( function() { 
 
 console.log('\'Allo \'Allo!');
-$('.get-notified').ajaxChimp({
-    callback: callbackFunction,
-    url: 'http://uncovr.us3.list-manage1.com/subscribe/post?u=cac5b743872425783d77adbed&id=4ea6a7a327'
+$('.get-notified').each( function() {
+    $(this).ajaxChimp({
+      callback: callbackFunction,
+      url: 'http://uncovr.us3.list-manage1.com/subscribe/post?u=cac5b743872425783d77adbed&id=4ea6a7a327'
+    });
 });
-
+$('.get-notified #send').click( function() {
+  $(this).text("Loading..");
+});
 function callbackFunction (resp) {
     if (resp.result === 'success') {
         $('#spread').modal('show');
+        $('.get-notified #send').text("Send");
     } else if(resp.result === 'error') {
-        alert("Sorry, but your email has been used before.");
+        $('.get-notified #send').text("Send");
+        alert("Invalid email address");
     }
 }
 
