@@ -9,6 +9,11 @@
     <title>uncovr - Discover new music</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="A radio powered by SoundCloud" />
+    <meta property="og:description" content="Check this awesome radio out!" />
+    <meta property="og:image" content="thumbnail_image" />
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- build:js scripts/vendor/modernizr.js -->
@@ -18,7 +23,7 @@
     <!-- endbuild -->
   </head>
 
-  <body class="animation">
+  <body id="home" class="animation">
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -43,14 +48,16 @@
               <h2>Discover.<br /> Play. Share.</h2>
 
               <p>Stay connected with music <br /> anywhere, anytime. </p>
-              <form class="form-inline get-notified" action="http://uncovr.us3.list-manage1.com/subscribe/post?u=cac5b743872425783d77adbed&amp;id=4ea6a7a327" method="post" name="mc-embedded-subscribe-form" id="mc-embedded-subscribe-form" target="_blank">
+               <form class="form-inline get-notified" method="post" name="mc-embedded-subscribe-form" id="mc-embedded-subscribe-form">
               <div class="inner">
                 <div class="form-group">
                   <input class="rounded" name="EMAIL" class="required email" id="mce-EMAIL" type="text" required placeholder="Email me when its ready" />
                 </div>
-                  <button id="send" class="btn btn-lg btn-primary" href="#">Send</button>
+                  <button id="send" type="submit" class="btn btn-lg btn-primary" href="#">Send</button>
                 </div>
               </form>
+
+
 
             </div>
 
@@ -65,7 +72,7 @@
               <div class="row">
                 <div class="feature-description col-md-5">
                   <h2>Radio powered by <span class="blue">SoundCloud</span></h2>
-                  <p>SoundCloud, an open source platform, is a place in the Web to showcase your music talent and creativity. We bring the worlds’ musicians, podcasters, composers, instrumentalists and bands together into an open community that thrives on sharing. Even a child who is not a musical prodigy can unlatch new doors for the future music or contribute to the development of an entirely new genre of music. Uncovr is an initiative that helps budding artists and music enthusiasts cater and connect with each other by grasping the tastes of music through radio requests.</p>                
+                  <p>We bring the worlds’ musicians, podcasters, composers, instrumentalists and bands together into an open community that thrives on sharing. Even a child who is not a musical prodigy can unlatch new doors for the future music or contribute to the development of an entirely new genre of music. Uncovr is an initiative that helps budding artists and music enthusiasts cater and connect with each other by grasping the tastes of music through radio requests.</p>                
                 </div>
                 <div class="feature-image col-md-push-5">
                   <div class="inner"></div>
@@ -143,14 +150,14 @@
             <div class="signup-leader center-block">
               <h2>Signup for the Beta</h2>
               <p>It's simple, easy and fast!</p>
-                <form class="form-inline get-notified" action="http://uncovr.us3.list-manage1.com/subscribe/post?u=cac5b743872425783d77adbed&amp;id=4ea6a7a327" method="post" name="mc-embedded-subscribe-form" id="mc-embedded-subscribe-form" target="_blank">
+                <!-- <form class="form-inline get-notified" method="post" name="mc-embedded-subscribe-form" id="mc-embedded-subscribe-form">
               <div class="inner">
                 <div class="form-group">
                   <input class="rounded" name="EMAIL" class="required email" id="mce-EMAIL" type="text" required placeholder="Email me when its ready" />
                 </div>
-                  <button id="send" class="btn btn-lg btn-primary" href="#">Send</button>
+                  <button id="send" type="submit" class="btn btn-lg btn-primary" href="#">Send</button>
                 </div>
-              </form>
+              </form> -->
               <div class="social">
                 <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="50" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
                 <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.gijwi.com" data-text="SoundCloud Radio" data-via="aasananes" data-hashtags="radio">Tweet</a>
@@ -160,7 +167,26 @@
           </div>
         </div>
     </div>
+              <div id="spread" class="modal fade">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
 
+                      <h4 class="modal-subleader">You have succesfully subscribed!</h4>
+                      <h2 class="modal-title">Now spread the word!</h2>
+                    </div>
+                    <div class="modal-body">
+
+                    <div class="share">
+                        <a class="btn btn-primary btn-large facebook" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://www.uncovr.me&p[images][0]=&p[title]=Radio%20app%20powered%20by%20SoundCloud&p[summary]=">Share on Facebook</a>
+                        <a class="btn  btn-primary btn-large twitter" href="http://twitter.com/home?status=Awesome%20radio%20app,%20powered%20by%20SoundCloud!%20%23discover%20#music%20@uncovr">Spread on Twitter</a>
+                    </div>
+          
+                    </div>
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
 
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -180,7 +206,9 @@
         <!-- build:js scripts/main.js -->
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/jquery-waypoints/waypoints.js"></script>
+        <script src="bower_components/ajaxchimp/jquery.ajaxchimp.js"></script>
         <script src="scripts/main.js"></script>
+        <script src="scripts/midway.js"></script>
         <script src="scripts/hello.js"></script>
         <!-- endbuild -->
 
