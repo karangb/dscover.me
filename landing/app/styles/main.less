@@ -301,12 +301,18 @@ p {
 // Animation Settings
 
 .animation {
+
+  #hero .container {
+    .translateX(100px);
+    .transition(all 500ms ease-out);
+    opacity:1 !important;
+  }
   .feature {
 
     &.fingertips { .feature-image, .feature-description { opacity:1 !important; } }
     .feature-image, .feature-description { .transition(all 500ms ease-out); opacity:0; }
     .feature-image { .scale(0.8); }
-    .feature-description { .translateX(-50px); }
+    .feature-description { .translateX(0px); }
     &.suggest {
       .feature-image { .scale(0.6); }
     }
@@ -315,6 +321,11 @@ p {
     }
   }
   .signup-leader { visibility: hidden; }
+}
+#hero.animate {
+  .container {
+    .translateX(0px) !important;
+  }
 }
 .animate {
       .feature-image, .feature-description {  opacity:1 !important; }

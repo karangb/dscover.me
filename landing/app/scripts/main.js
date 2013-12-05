@@ -10,9 +10,15 @@ $('#features').waypoint({
     $('.scroll-down').hide();
   }
 });
+$('#features').waypoint({
+  offset: '100%', // Apply "stuck" when element 30px from top
+  handler: function() {
+    $('.scroll-down').hide();
+  }
+});
 
 if ($(window).height() >= 980) {
-    $(".feature").waypoint({
+    $(".feature, #hero").waypoint({
         triggerOnce: true,
         handler: function(direction)
         {
@@ -25,7 +31,7 @@ if ($(window).height() >= 980) {
         offset: '75%'
     });
 } else {
-    $(".feature").waypoint({
+    $(".feature, #hero").waypoint({
         triggerOnce: true,
         handler: function(direction)
         {

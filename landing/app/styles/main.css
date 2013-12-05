@@ -6334,6 +6334,14 @@ p {
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
+.animation #hero .container {
+  -webkit-transform: translateX(100px);
+  -ms-transform: translateX(100px);
+  transform: translateX(100px);
+  -webkit-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+  opacity: 1 !important;
+}
 .animation .feature.fingertips .feature-image,
 .animation .feature.fingertips .feature-description {
   opacity: 1 !important;
@@ -6350,9 +6358,9 @@ p {
   transform: scale(0.8);
 }
 .animation .feature .feature-description {
-  -webkit-transform: translateX(-50px);
-  -ms-transform: translateX(-50px);
-  transform: translateX(-50px);
+  -webkit-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
 }
 .animation .feature.suggest .feature-image {
   -webkit-transform: scale(0.6);
@@ -6369,6 +6377,11 @@ p {
 }
 .animation .signup-leader {
   visibility: hidden;
+}
+#hero.animate .container {
+  -webkit-transform: translateX(0px) !important;
+  -ms-transform: translateX(0px) !important;
+  transform: translateX(0px) !important;
 }
 .animate .feature-image,
 .animate .feature-description {
