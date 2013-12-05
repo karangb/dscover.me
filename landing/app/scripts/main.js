@@ -1,5 +1,8 @@
 console.log('\'Allo \'Allo!');
 
+$('.scroll-down').on('click', function(e) {
+  e.preventDefault();
+})
 // Hide Scroll
 $('#features').waypoint({
   offset: '100%', // Apply "stuck" when element 30px from top
