@@ -6035,9 +6035,6 @@ p {
 .social .fb-like {
   margin-right: 10px;
 }
-.social iframe {
-  width: 79px !important;
-}
 .get-notified .inner {
   background: #fff;
   border-radius: 35px;
@@ -6373,9 +6370,6 @@ p {
 }
 #signup .social {
   margin-top: 20px;
-}
-#signup .social iframe {
-  width: 79px !important;
 }
 #signup .signup-leader {
   color: #fff;
