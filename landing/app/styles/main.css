@@ -6143,8 +6143,8 @@ p {
   opacity: 0.5;
   filter: alpha(opacity=50);
   margin-bottom: 50px;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 26px;
+  line-height: 38px;
 }
 #hero .learn-more {
   border: 2px solid rgba(255, 255, 255, 0.5);
